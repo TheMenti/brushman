@@ -12,5 +12,10 @@ func _init(_damage: int, _hitbox_lifetime: float, _hitbox_shape: Shape2D) -> voi
 
 func _ready() -> void:
 	monitorable = false
-	area_entered.connect 
+	area_entered.connect(_area_collided)
 	
+	if hitbox_liftime > 0.0
+	
+	
+func _area_collided(area: Area2D) -> void 
+	pass
