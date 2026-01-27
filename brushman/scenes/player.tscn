@@ -1,37 +1,15 @@
 [gd_scene format=3 uid="uid://dx6sjq6wj7efm"]
 
 [ext_resource type="Script" uid="uid://dj7bg4bqfc1h1" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://c3rphd18fdoc3" path="res://sprites/adventurer_sprite_sheet_v1.1.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://211niqufs58i" path="res://sprites/Static.png" id="2_smehm"]
 [ext_resource type="Texture2D" uid="uid://ciwpy2nrflh13" path="res://sprites/Walking/1.png" id="3_fjrip"]
+[ext_resource type="Texture2D" uid="uid://bo7s33g8g7a4i" path="res://sprites/jumping/2.png" id="4_oprun"]
 [ext_resource type="Texture2D" uid="uid://cbo0l1k4x38j3" path="res://sprites/Walking/2.png" id="4_smehm"]
+[ext_resource type="Texture2D" uid="uid://cpcua0x6or6q6" path="res://sprites/jumping/3.png" id="5_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://v8x6dfctaxkb" path="res://sprites/Walking/3.png" id="5_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dbhqbbi83inwf" path="res://sprites/Walking/4.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://dj2j5gvesgdpy" path="res://sprites/Walking/5.png" id="7_d2wvv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
-atlas = ExtResource("2_g2els")
-region = Rect2(0, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
-atlas = ExtResource("2_g2els")
-region = Rect2(32, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
-atlas = ExtResource("2_g2els")
-region = Rect2(64, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fulsm"]
-atlas = ExtResource("2_g2els")
-region = Rect2(96, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
-atlas = ExtResource("2_g2els")
-region = Rect2(128, 160, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
-atlas = ExtResource("2_g2els")
-region = Rect2(160, 160, 32, 32)
+[ext_resource type="Texture2D" uid="uid://613m0f8ydhck" path="res://sprites/jumping/5.png" id="7_fulsm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -45,22 +23,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g2els")
+"texture": ExtResource("7_fulsm")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a8ls1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a8ls1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qfm1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fulsm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4r5pv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_60mlk")
+"texture": ExtResource("4_oprun")
 }],
 "loop": false,
 "name": &"jumping",
@@ -100,8 +74,6 @@ position = Vector2(296.99997, 368.00003)
 scale = Vector2(0.03617961, 0.029981371)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"jumping"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
 position = Vector2(293, 369)
