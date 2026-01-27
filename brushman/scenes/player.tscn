@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bao3myj3acpmu"]
 
-[ext_resource type="Script" uid="uid://diayn6mjd0wh3" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://ddjtwiqt0gef2" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://p0266ak7ahky" path="res://icon.svg" id="2_i3pqv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_sweqy"]
 radius = 36.44821
 
-[node name="Player" type="Area2D" unique_id=1286598175]
+[node name="Player" type="CharacterBody2D" unique_id=1285104086]
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=768068925]
