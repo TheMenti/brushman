@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dx6sjq6wj7efm"]
 
-[ext_resource type="Script" uid="uid://dj7bg4bqfc1h1" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://dj7bg4bqfc1h1" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c3rphd18fdoc3" path="res://sprites/adventurer_sprite_sheet_v1.1.png" id="2_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
