@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Brushman"
+run/main_scene="uid://b4x04kpv4sp36"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://sprites/icon.svg"
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx6sjq6wj7efm"]
 
 [ext_resource type="Texture2D" uid="uid://p0266ak7ahky" path="res://sprites/icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dj7bg4bqfc1h1" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -17,6 +18,7 @@ animations = [{
 radius = 84.095184
 
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=695863480]
 sprite_frames = SubResource("SpriteFrames_g2els")
