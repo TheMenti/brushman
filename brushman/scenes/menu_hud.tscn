@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0v78d35y6alm" path="res://scripts/menu_hud.gd" id="1_ueon0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueon0"]
+modulate_color = Color(0.5409905, 0.5409905, 0.5409905, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cenq"]
 bg_color = Color(1, 1, 1, 1)
@@ -40,26 +41,6 @@ offset_right = 1152.0
 offset_bottom = 647.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ueon0")
 
-[node name="StartBTn" type="Button" parent="." unique_id=1427245021]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = -25.0
-offset_right = 132.5
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
-theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
-text = "Start"
-
 [node name="Label" type="Label" parent="." unique_id=1929881193]
 layout_mode = 1
 anchors_preset = 8
@@ -78,39 +59,34 @@ text = "BRUSHMAN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionBtn" type="Button" parent="." unique_id=1224951710]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1264516212]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = 41.0
-offset_right = 132.5
-offset_bottom = 91.0
+offset_left = -146.0
+offset_top = -46.5
+offset_right = 146.0
+offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="StartBTn" type="Button" parent="VBoxContainer" unique_id=1427245021]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
-text = "Options"
+text = "Start"
 
-[node name="QuitBtn" type="Button" parent="." unique_id=2125526627]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = 105.0
-offset_right = 132.5
-offset_bottom = 155.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="QuitBtn" type="Button" parent="VBoxContainer" unique_id=2125526627]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
@@ -118,5 +94,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
 text = "Quit"
 
-[connection signal="pressed" from="StartBTn" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="QuitBtn" to="." method="on_quit_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartBTn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitBtn" to="." method="on_quit_btn_pressed"]
