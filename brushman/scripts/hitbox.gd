@@ -14,8 +14,12 @@ func _ready() -> void:
 	monitorable = false
 	area_entered.connect(_area_collided)
 	
-	if hitbox_liftime > 0.0
+	if hitbox_liftime > 0.0:
+		var mew_timer = Timer.new()  #inizializza nuovo timer
+		add_child(new_timer)  #aggiunge child nodo timer
+		new_timer.timeout.connect(queue_free)  #eliminazione del timer quando finito
+		#new_timer.
 	
 	
-func _area_collided(area: Area2D) -> void 
-	pass
+#func _area_collided(area: Area2D) -> void 
+	#pass
