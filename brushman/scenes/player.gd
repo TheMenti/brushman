@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	
 	if direction:
+		if is_on_floor():
+			_animated_sprite.play("walking")
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -37,5 +39,5 @@ func _physics_process(delta: float) -> void:
 
 func attack():
 	if Input.is_action_pressed("brush_attack"):
-		pass
+		
 		
