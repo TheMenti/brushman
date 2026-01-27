@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d232uniiswsn0"]
+
+[ext_resource type="Script" uid="uid://68ophy3bojgu" path="res://scripts/idea.gd" id="1_2yuoy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rti7w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2yuoy"]
+load_path = "res://.godot/imported/MonedaD.png-719107fb7c84ee2ff1e0e9e9f354371c.ctex"
+
+[node name="idea" type="Area2D" unique_id=1576161959 groups=["idea"]]
+script = ExtResource("1_2yuoy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205789703]
+shape = SubResource("CircleShape2D_rti7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2067206311]
+position = Vector2(-8, -8)
+texture = SubResource("CompressedTexture2D_2yuoy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 18, 16)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
