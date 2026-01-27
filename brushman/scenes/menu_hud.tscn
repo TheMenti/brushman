@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://btxpoqpmk6o7j"]
+
+[ext_resource type="Script" uid="uid://0v78d35y6alm" path="res://scripts/menu_hud.gd" id="1_ueon0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueon0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cenq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueon0"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80aov"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MenuHUD" type="Control" unique_id=738148431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ueon0")
+
+[node name="Background" type="Panel" parent="." unique_id=1689003077]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ueon0")
+
+[node name="StartBTn" type="Button" parent="." unique_id=1427245021]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -25.0
+offset_right = 132.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
+text = "Start"
+
+[node name="Label" type="Label" parent="." unique_id=1929881193]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -297.0
+offset_right = 244.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 86
+text = "BRUSHMAN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionBtn" type="Button" parent="." unique_id=1224951710]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = 41.0
+offset_right = 132.5
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
+text = "Options"
+
+[node name="QuitBtn" type="Button" parent="." unique_id=2125526627]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = 105.0
+offset_right = 132.5
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
+text = "Quit"
+
+[connection signal="pressed" from="StartBTn" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="on_quit_btn_pressed"]
