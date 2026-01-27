@@ -15,16 +15,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 84.095184
+radius = 22.090721
 
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=695863480]
+position = Vector2(-43, 43.5)
+scale = Vector2(0.328125, 0.3203125)
 sprite_frames = SubResource("SpriteFrames_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=818497053]
-position = Vector2(0, 1)
+position = Vector2(-43, 43)
 shape = SubResource("CircleShape2D_qhqgy")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=661838972]
