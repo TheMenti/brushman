@@ -1,6 +1,5 @@
 extends CharacterBody2D
 @onready var _animated_sprite = $player_animated_sprites
-var Health:float = 5.0 
 const attack_hitbox = preload("res://scripts/hitbox.gd")
 
 #const Movement = preload("movemente.gd")
