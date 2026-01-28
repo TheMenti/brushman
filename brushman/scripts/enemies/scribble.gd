@@ -11,6 +11,7 @@ var direction: int = 1
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
+	$Area2D.body_entered.connect(_on_hitbox_body_entered)
 	ledge_check.position.x = 4  # Offset to look ahead (adjust based on sprite size)
 
 func _physics_process(delta: float) -> void:
@@ -37,10 +38,8 @@ func flip_direction() -> void:
 	# Move the RayCast to the other side so it looks ahead of the new direction
 	ledge_check.position.x = abs(ledge_check.position.x) * direction
 
-# --- Damage Logic ---
-# Connect the "body_entered" signal from your Area2D (Hitbox) to this function
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		# Assuming your player has a 'take_damage' function
-		if body.has_method("take_damage"):
-			body.take_damage(damage_amount)
+	print("body_entered")
+	if body.is_class("Player") :
+		queue_free()
+		
