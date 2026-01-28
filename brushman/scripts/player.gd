@@ -1,8 +1,39 @@
 extends CharacterBody2D
+
 @onready var _animated_sprite = $player_animated_sprites
+@onready var feedback_label = $FeedBackLabel
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
+
+@onready var white_brush_area = $WhiteBrushArea
+var max_dist_wb = 60.0
+
+func _input(event):
+	if event.is_action_pressed("brush_unmask"):
+		svela_platform() # <--- Qui c'era l'errore: usa 1 Tab in più dell'if, non 2 o 3.
+			
+func svela_platform():
+	# Assicurati che white_brush_area sia definito in alto con @onready
+	var blocchi_toccati = white_brush_area.get_overlapping_areas()
+	
+	for area in blocchi_toccati:
+		var platform = area.get_parent()
+		
+		# ERRORE CORRETTO QUI SOTTO: avevi scritto "piattaforma" invece di "platform"
+		var distance = global_position.distance_to(platform.global_position)
+		
+		# controllo distanza per usare pennello
+		if distance > max_dist_wb:
+			print("too far!")
+			feedback_label.text = "Too Far!"
+			feedback_label.visible = true
+			await get_tree().create_timer(2.0).timeout
+			feedback_label.visible = false
+			continue
+		
+		if platform.has_method("rivela_piattaforma"):
+			platform.rivela_piattaforma()
 
 func _physics_process(delta: float) -> void:	
 	if is_on_floor():
