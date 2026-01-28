@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 
 func attack():
 	if Input.is_action_pressed("brush_attack"):
-		attack_hitbox.new()
+		#attack_hitbox.new()
 		pass
 		
 		
