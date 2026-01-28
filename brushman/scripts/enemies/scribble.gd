@@ -11,8 +11,11 @@ var direction: int = 1
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
-	$Area2D.body_entered.connect(_on_hitbox_body_entered)
 	ledge_check.position.x = 4  # Offset to look ahead (adjust based on sprite size)
+	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_exited)
+
+func _on_screen_exited():
+	queue_free()
 
 func _physics_process(delta: float) -> void:
 	# Apply Gravity
@@ -39,7 +42,7 @@ func flip_direction() -> void:
 	ledge_check.position.x = abs(ledge_check.position.x) * direction
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	print("body_entered")
+	print("body_entered scribble")
 	if body.is_class("Player") :
 		queue_free()
 		

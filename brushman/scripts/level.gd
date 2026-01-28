@@ -9,22 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	spawn_path_follower()
-	$Path2D/PathFollow2D.progress += speed * delta
-
-func spawn_path_follower():
-	# 1. Create a NEW PathFollow2D for this specific enemy
-	var new_follower = PathFollow2D.new()
-	
-	# 2. Instantiate the enemy visuals
-	var enemy = level_scene.instantiate()
-	
-	# 3. Add the enemy as a CHILD of the follower
-	# The enemy will now move wherever the follower moves
-	new_follower.add_child(enemy)
-	
-	# 4. Add the follower to the Path2D
-	$Path2D.add_child(new_follower) 
+	pass
 
 
 func auto_move_enemy():
