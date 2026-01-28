@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var _animated_sprite = $player_animated_sprites
 var Health:float = 5.0 
+const attack_hitbox = preload("res://scripts/hitbox.gd")
 
 #const Movement = preload("movemente.gd")
 const SPEED = 300.0
@@ -56,6 +57,7 @@ func _physics_process(delta: float) -> void:
 
 func attack():
 	if Input.is_action_pressed("brush_attack"):
+		attack_hitbox.new()
 		pass
 		
 		
