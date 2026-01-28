@@ -1,11 +1,9 @@
 class_name Hitbox extends Area2D
 
-var damage: int 
 var hitbox_liftime: float
 var hitbox_shape: Shape2D
 
-func _init(_damage: int, _hitbox_lifetime: float, _hitbox_shape: Shape2D) -> void:
-	damage = _damage
+func _init(_hitbox_lifetime: float, _hitbox_shape: Shape2D) -> void:
 	hitbox_liftime = hitbox_liftime
 	hitbox_shape = _hitbox_shape
 	
@@ -18,8 +16,15 @@ func _ready() -> void:
 		var mew_timer = Timer.new()  #inizializza nuovo timer
 		add_child(new_timer)  #aggiunge child nodo timer
 		new_timer.timeout.connect(queue_free)  #eliminazione del timer quando finito
-		#new_timer.
+		new_timer.call_deferred("start", hitbox_liftime)
 	
+	if shape:
+		var collision_shape = CollisionShape2d.new()
+		collision_shape.shape = shape
+		add_child(collision_shape)
 	
-#func _area_collided(area: Area2D) -> void 
-	#pass
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+	
+func _area_collided(area: Area2D) -> void 
+	pass
