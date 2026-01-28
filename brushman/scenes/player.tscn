@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://v8x6dfctaxkb" path="res://sprites/Walking/3.png" id="5_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dbhqbbi83inwf" path="res://sprites/Walking/4.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://dj2j5gvesgdpy" path="res://sprites/Walking/5.png" id="7_d2wvv"]
-[ext_resource type="Texture2D" uid="uid://613m0f8ydhck" path="res://sprites/jumping/5.png" id="7_fulsm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -23,7 +22,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_fulsm")
+"texture": ExtResource("4_oprun")
 }],
 "loop": true,
 "name": &"falling",
@@ -32,9 +31,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_a8ls1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_oprun")
 }],
 "loop": false,
 "name": &"jumping",
@@ -73,7 +69,7 @@ metadata/_edit_group_ = true
 position = Vector2(296.99997, 368.00003)
 scale = Vector2(0.03617961, 0.029981371)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"jumping"
+animation = &"falling"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
 position = Vector2(293, 369)
