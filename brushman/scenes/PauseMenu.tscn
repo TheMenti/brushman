@@ -4,8 +4,8 @@
 [ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_g4jo0"]
 [ext_resource type="Texture2D" uid="uid://b67sx7nfisqsc" path="res://assets/gui/ResumeButtons.png" id="3_40atx"]
 [ext_resource type="Texture2D" uid="uid://cyxjvr67bpwr7" path="res://assets/gui/ResumeButtonsPressed.png" id="4_yx35g"]
-[ext_resource type="Texture2D" uid="uid://e5ogl3r4tm7p" path="res://assets/gui/menu_btn.PNG" id="5_40atx"]
-[ext_resource type="Texture2D" uid="uid://dpiaa0yxog1gp" path="res://assets/gui/pressed_menu_btn.PNG" id="6_yx35g"]
+[ext_resource type="Texture2D" uid="uid://codvfkaq7i8hl" path="res://assets/gui/Menu_btn.png" id="5_40atx"]
+[ext_resource type="Texture2D" uid="uid://i2oyuefflc1w" path="res://assets/gui/Menu_btn_pressed.png" id="6_yx35g"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=294160943]
 process_mode = 3
