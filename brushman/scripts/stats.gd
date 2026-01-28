@@ -6,5 +6,5 @@ enum Faction{
 }
 @export var base_health:float 
 @export var base_damage:float
-@export var faction:Faction
+@export var faction:Faction = Faction.PLAYER
 @export var speed:float

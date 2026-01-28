@@ -10,3 +10,6 @@ func _ready() -> void:
 				set_collision_mask_value(1, true)
 		Stats.Faction.ENEMY:
 				set_collision_mask_value(2, true)
+
+func recieve_hit(damage: float) -> void:
+	own_stats.health -= damage 

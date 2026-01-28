@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
-	match attacker_stats.faction:
+	match attacker_stats.Faction:
 		Stats.Faction.PLAYER:
 				set_collision_mask_value(1, true)
 		Stats.Faction.ENEMY:
@@ -34,4 +34,6 @@ func _ready() -> void:
 
 	
 func _on_area_entered(area: Area2D) -> void:
-	pass
+	if not area.has_method("recieve_hit"):
+		return
+	area.recieve_hit(attacker_stats.base_damage)

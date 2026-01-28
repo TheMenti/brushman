@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dx6sjq6wj7efm"]
 
-[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="1_3v2ag"]
+[ext_resource type="Script" uid="uid://dj7bg4bqfc1h1" path="res://scripts/player.gd" id="1_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://211niqufs58i" path="res://sprites/Static.png" id="2_smehm"]
 [ext_resource type="Texture2D" uid="uid://ciwpy2nrflh13" path="res://sprites/Walking/1.png" id="3_fjrip"]
 [ext_resource type="Texture2D" uid="uid://613m0f8ydhck" path="res://sprites/jumping/5.png" id="4_jej6c"]
@@ -11,80 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://v8x6dfctaxkb" path="res://sprites/Walking/3.png" id="5_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://dbhqbbi83inwf" path="res://sprites/Walking/4.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://dj2j5gvesgdpy" path="res://sprites/Walking/5.png" id="7_d2wvv"]
-
-[sub_resource type="GDScript" id="GDScript_jej6c"]
-script/source = "extends CharacterBody2D
-@onready var _animated_sprite = $player_animated_sprites
-const attack_hitbox = preload(\"res://scripts/hitbox.gd\")
-@export var stats : Stats
-
-#const Movement = preload(\"movemente.gd\")
-@onready var SPEED = stats.speed
-const JUMP_VELOCITY = -300.0
-
-func play_anim(name: String) -> void:
-	if _animated_sprite.animation != name:
-		_animated_sprite.play(name)
-
-func _physics_process(delta: float) -> void:
-	
-	# Gravità
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		
-		
-
-	# Salto
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		play_anim(\"jumping\")
-
-	
-	elif Input.is_action_pressed(\"jump\") and not is_on_floor():
-		velocity.y += delta * JUMP_VELOCITY - 3
-		if velocity.y > 0:
-			play_anim(\"falling\")
-		else:
-			play_anim(\"jumping\")
-
-	# Movimento orizzontale
-	var direction := Input.get_axis(\"move_left\", \"move_right\")
-
-	if direction:
-		velocity.x = direction * SPEED
-		_animated_sprite.flip_h = direction < 0
-		if is_on_floor():
-			play_anim(\"walking\")
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if is_on_floor():
-			play_anim(\"default\")
-
-	# Animazione in aria
-	if not is_on_floor():
-		if velocity.y > 0:
-			play_anim(\"falling\")
-		else:
-			play_anim(\"jumping\")
-		
-
-	move_and_slide()
-
-func attack():
-	if Input.is_action_pressed(\"brush_attack\"):
-		#attack_hitbox.new()
-		pass
-		
-		
-"
-
-[sub_resource type="Resource" id="Resource_d2wvv"]
-resource_local_to_scene = true
-script = ExtResource("1_3v2ag")
-base_health = 5.0
-base_damage = 1.0
-speed = 300.0
-metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
@@ -143,20 +69,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3v2ag"]
-height = 68.0
+radius = 13.0
+height = 78.0
 
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
-position = Vector2(4, 42)
-script = SubResource("GDScript_jej6c")
-stats = SubResource("Resource_d2wvv")
+position = Vector2(46, 46)
+script = ExtResource("1_d2wvv")
 metadata/_edit_group_ = true
 
 [node name="player_animated_sprites" type="AnimatedSprite2D" parent="." unique_id=695863480]
-position = Vector2(296.99997, 368.00003)
+position = Vector2(-2, 1)
 scale = Vector2(0.03617961, 0.029981371)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"falling"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
-position = Vector2(293, 369)
+[node name="player_hitbox" type="CollisionShape2D" parent="." unique_id=1732113809]
+position = Vector2(-5, -2)
 shape = SubResource("CapsuleShape2D_3v2ag")
