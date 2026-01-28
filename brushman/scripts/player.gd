@@ -3,6 +3,10 @@ extends CharacterBody2D
 const attack_hitbox = preload("res://scripts/hitbox.gd")
 @export var stats : Stats
 
+func take_damage() -> void:
+	pass
+	
+
 #const Movement = preload("movemente.gd")
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0

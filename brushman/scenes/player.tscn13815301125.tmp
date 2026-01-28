@@ -81,7 +81,6 @@ func attack():
 
 [sub_resource type="Resource" id="Resource_f1ej7"]
 script = ExtResource("1_3v2ag")
-max_health = 50.0
 damage = 1.0
 metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
