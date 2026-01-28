@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://ddhdf320n15ie"]
 
 [ext_resource type="Script" uid="uid://d0tdplgkvhkjm" path="res://scripts/pause_menu.gd" id="1_jvnd5"]
+[ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_g4jo0"]
+[ext_resource type="Texture2D" uid="uid://b67sx7nfisqsc" path="res://assets/gui/ResumeButtons.png" id="3_40atx"]
+[ext_resource type="Texture2D" uid="uid://cyxjvr67bpwr7" path="res://assets/gui/ResumeButtonsPressed.png" id="4_yx35g"]
+[ext_resource type="Texture2D" uid="uid://e5ogl3r4tm7p" path="res://assets/gui/menu_btn.PNG" id="5_40atx"]
+[ext_resource type="Texture2D" uid="uid://dpiaa0yxog1gp" path="res://assets/gui/pressed_menu_btn.PNG" id="6_yx35g"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=294160943]
 process_mode = 3
@@ -21,36 +26,57 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.0
+offset_left = -131.0
 offset_top = -102.0
-offset_right = 135.0
-offset_bottom = 108.0
+offset_right = 139.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.21960784, 0.21960784, 0.21960784, 0.65882355)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect" unique_id=517141222]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect" unique_id=2043133276]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -41.0
-offset_top = -33.0
-offset_right = 41.0
-offset_bottom = 33.0
+offset_left = -72.0
+offset_top = -84.0
+offset_right = 77.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_g4jo0")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "[center]PAUSE"
 
-[node name="BtnResume" type="Button" parent="Control/ColorRect/VBoxContainer" unique_id=438768072]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ColorRect" unique_id=1223182410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -17.0
+offset_right = -42.0
+offset_bottom = 1.25
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.002090088
+scale = Vector2(4, 4)
+
+[node name="resume_btn" type="TextureButton" parent="Control/ColorRect/HBoxContainer" unique_id=1255054999]
 layout_mode = 2
-text = "RIPRENDI"
+texture_normal = ExtResource("3_40atx")
+texture_pressed = ExtResource("4_yx35g")
 
-[node name="BtnQuit" type="Button" parent="Control/ColorRect/VBoxContainer" unique_id=429114815]
+[node name="quit_btn" type="TextureButton" parent="Control/ColorRect/HBoxContainer" unique_id=1455576651]
 layout_mode = 2
-text = "ESCI
-"
+texture_normal = ExtResource("5_40atx")
+texture_pressed = ExtResource("6_yx35g")
 
-[connection signal="pressed" from="Control/ColorRect/VBoxContainer/BtnResume" to="." method="_on_btn_resume_pressed"]
-[connection signal="pressed" from="Control/ColorRect/VBoxContainer/BtnQuit" to="." method="_on_btn_quit_pressed"]
+[connection signal="pressed" from="Control/ColorRect/HBoxContainer/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="Control/ColorRect/HBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
