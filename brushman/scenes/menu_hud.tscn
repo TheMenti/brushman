@@ -1,30 +1,14 @@
 [gd_scene format=3 uid="uid://btxpoqpmk6o7j"]
 
 [ext_resource type="Script" uid="uid://0v78d35y6alm" path="res://scripts/menu_hud.gd" id="1_ueon0"]
+[ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_80aov"]
+[ext_resource type="Texture2D" uid="uid://ctyemi435w1b4" path="res://assets/gui/PlayButtons.png" id="3_m7kb0"]
+[ext_resource type="Texture2D" uid="uid://bvhu6aorhn8wf" path="res://assets/gui/PlayButtonsPressed.png" id="4_d2yid"]
+[ext_resource type="Texture2D" uid="uid://ubvao0ftau06" path="res://assets/gui/QuitButtons.png" id="5_vtaxa"]
+[ext_resource type="Texture2D" uid="uid://sejdtvobnlid" path="res://assets/gui/QuitButtonsPressed.png" id="6_1swv2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ueon0"]
 modulate_color = Color(0.5409905, 0.5409905, 0.5409905, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cenq"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueon0"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80aov"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [node name="MenuHUD" type="Control" unique_id=738148431]
 layout_mode = 3
@@ -36,63 +20,56 @@ grow_vertical = 2
 script = ExtResource("1_ueon0")
 
 [node name="Background" type="Panel" parent="." unique_id=1689003077]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 647.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ueon0")
 
-[node name="Label" type="Label" parent="." unique_id=1929881193]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1092900765]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -247.0
-offset_top = -297.0
-offset_right = 244.0
-offset_bottom = -132.0
+offset_left = -284.0
+offset_top = -183.0
+offset_right = 310.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 86
-text = "BRUSHMAN"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_fonts/normal_font = ExtResource("2_80aov")
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[center]BRUSHMAN"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1264516212]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2107482595]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -46.5
-offset_right = 146.0
-offset_bottom = 46.5
+offset_left = -168.0
+offset_top = -57.0
+offset_right = -124.0
+offset_bottom = -35.875
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+scale = Vector2(8, 8)
 
-[node name="StartBTn" type="Button" parent="VBoxContainer" unique_id=1427245021]
+[node name="startBTn" type="TextureButton" parent="HBoxContainer" unique_id=781333637]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
-theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
-text = "Start"
+texture_normal = ExtResource("3_m7kb0")
+texture_pressed = ExtResource("4_d2yid")
 
-[node name="QuitBtn" type="Button" parent="VBoxContainer" unique_id=2125526627]
+[node name="quitBtn" type="TextureButton" parent="HBoxContainer" unique_id=1952804295]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_4cenq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ueon0")
-theme_override_styles/hover = SubResource("StyleBoxFlat_80aov")
-text = "Quit"
+texture_normal = ExtResource("5_vtaxa")
+texture_pressed = ExtResource("6_1swv2")
 
-[connection signal="pressed" from="VBoxContainer/StartBTn" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitBtn" to="." method="on_quit_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/startBTn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/quitBtn" to="." method="on_quit_btn_pressed"]
