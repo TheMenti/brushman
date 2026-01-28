@@ -1,5 +1,6 @@
 class_name player extends CharacterBody2D
 const attack_hitbox = preload("res://scripts/hitbox.gd")
+@export var hitbox_shape: Shape2D
 @onready var _animated_sprite = $player_animated_sprites
 @export var stats:Stats
 @onready var SPEED := stats.speed
@@ -49,12 +50,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			play_anim("jumping")
 		
-
 	move_and_slide()
 
-func attack():
-	if Input.is_action_pressed("brush_attack"):
-		#attack_hitbox.new()
-		pass
-		
-		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("brush_attack") and not event.is_echo():
+		var hitbox = Hitbox.new(stats, 0.5, hitbox_shape)
+		add_child(hitbox)
