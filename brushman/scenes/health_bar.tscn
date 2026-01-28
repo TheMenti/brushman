@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://yik3i6di5u77"]
+
+[ext_resource type="Texture2D" uid="uid://dpbxinri0qich" path="res://assets/gui/HealtBar5HP.png" id="1_1bvlm"]
+[ext_resource type="Script" uid="uid://cfnc85j7ol8w6" path="res://scripts/health_bar.gd" id="1_s32md"]
+[ext_resource type="Texture2D" uid="uid://wcfn5ggby80v" path="res://assets/gui/HealtBar4HP.png" id="2_0kw87"]
+[ext_resource type="Texture2D" uid="uid://cso2xq2vtindj" path="res://assets/gui/HealtBar3HP.png" id="3_s32md"]
+[ext_resource type="Texture2D" uid="uid://dfhqe27h5p6a5" path="res://assets/gui/HealtBar2HP.png" id="4_5xgdr"]
+[ext_resource type="Texture2D" uid="uid://qfxh1of72px4" path="res://assets/gui/HealtBar1HP.png" id="5_oeie6"]
+[ext_resource type="Texture2D" uid="uid://dwilexm3kvn48" path="res://assets/gui/HealtBar0HP.png" id="6_x53g4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yg0xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x53g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oeie6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5xgdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s32md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0kw87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_1bvlm")
+}],
+"loop": false,
+"name": &"health_bar",
+"speed": 10.0
+}]
+
+[node name="health_bar" type="CanvasLayer" unique_id=1927512815]
+script = ExtResource("1_s32md")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=535814370]
+position = Vector2(78, 33)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yg0xg")
+animation = &"health_bar"
+frame = 5
+frame_progress = 1.0

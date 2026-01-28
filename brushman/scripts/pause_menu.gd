@@ -26,10 +26,12 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_btn_resume_pressed() -> void:
+func _on_resume_btn_pressed() -> void:
 	toggle_pause()
+	pass # Replace with function body.
 
 
-func _on_btn_quit_pressed() -> void:
+func _on_quit_btn_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu_hud.tscn")
+	pass # Replace with function body.
