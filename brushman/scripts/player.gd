@@ -9,7 +9,7 @@ func play_anim(name: String) -> void:
 		_animated_sprite.play(name)
 		
 func falling_state(vel) -> bool:
-		if vel < 0:
+		if vel > 0:
 			return true
 		else:
 			return false
@@ -19,8 +19,8 @@ func _physics_process(delta: float) -> void:
 	# Gravità
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		if falling_state(velocity.y):
-			play_anim("falling")
+		#if falling_state(velocity.y):
+			#play_anim("falling")
 		
 		
 
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		if falling_state(velocity.y):
 			play_anim("falling")
 	
-	if Input.is_action_pressed("jump") and not is_on_floor():
+	elif Input.is_action_pressed("jump") and not is_on_floor():
 		velocity.y += delta * JUMP_VELOCITY - 3
 		play_anim("jumping")
 		if falling_state(velocity.y):
