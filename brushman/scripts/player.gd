@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var _animated_sprite = $player_animated_sprites
 const attack_hitbox = preload("res://scripts/hitbox.gd")
+@export var stats : Stats
 
 #const Movement = preload("movemente.gd")
 const SPEED = 300.0
