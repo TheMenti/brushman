@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dcju7btgv30a4"]
 
 [ext_resource type="Texture2D" uid="uid://5pia4w1l8t7q" path="res://sprites/scribble.jpeg" id="2_4eiww"]
+[ext_resource type="Script" uid="uid://m62wd1wdq030" path="res://scripts/enemies/rubber.gd" id="2_bvcmf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
 
 [node name="Rubber" type="CharacterBody2D" unique_id=2102717077]
-collision_layer = 2
+scale = Vector2(0.325, 0.325)
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("2_bvcmf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
 scale = Vector2(0.1, 0.1)
