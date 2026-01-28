@@ -166,7 +166,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 22.090721
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(632, 20)
+
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
+position = Vector2(149, -67)
 script = ExtResource("1_g2els")
 
 [node name="player_animated_sprites" type="AnimatedSprite2D" parent="." unique_id=695863480]
@@ -178,3 +182,19 @@ animation = &"jumping"
 [node name="player_hitbox" type="CollisionShape2D" parent="." unique_id=818497053]
 position = Vector2(-43, 43)
 shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="WhiteBrushArea" type="Area2D" parent="." unique_id=2039578710]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteBrushArea" unique_id=1300674176]
+position = Vector2(262, 42)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1724013591]
+position = Vector2(82, 42)
+zoom = Vector2(1.5, 1.5)
+
+[node name="FeedBackLabel" type="Label" parent="." unique_id=1336256445]
+offset_left = -67.0
+offset_top = -12.0
+offset_right = -16.0
+offset_bottom = 11.0
