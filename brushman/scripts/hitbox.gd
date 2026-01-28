@@ -1,10 +1,10 @@
 class_name Hitbox extends Area2D
 
-
+var attacker_stats: Stats
 var hitbox_lifetime: float
 var hitbox_shape: Shape2D
 
-func _init(_hitbox_lifetime: float, _hitbox_shape: Shape2D) -> void:
+func _init(_attacker_stats: Stats, _hitbox_lifetime: float, _hitbox_shape: Shape2D) -> void:
 	hitbox_lifetime = hitbox_lifetime
 	hitbox_shape = _hitbox_shape
 	
@@ -26,6 +26,12 @@ func _ready() -> void:
 	
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
+	match attacker_stats.faction:
+		Stats.Faction.PLAYER:
+				set_collision_mask_value(1, true)
+		Stats.Faction.ENEMY:
+				set_collision_mask_value(2, true)
+
 	
 func _on_area_entered(area: Area2D) -> void:
 	pass

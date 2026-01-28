@@ -1,14 +1,8 @@
-extends CharacterBody2D
-@onready var _animated_sprite = $player_animated_sprites
+class_name player extends CharacterBody2D
 const attack_hitbox = preload("res://scripts/hitbox.gd")
-@export var stats : Stats
-
-func take_damage() -> void:
-	pass
-	
-
-#const Movement = preload("movemente.gd")
-const SPEED = 300.0
+@onready var _animated_sprite = $player_animated_sprites
+@export var stats:Stats
+@onready var SPEED := stats.speed
 const JUMP_VELOCITY = -300.0
 
 func play_anim(name: String) -> void:
@@ -16,7 +10,6 @@ func play_anim(name: String) -> void:
 		_animated_sprite.play(name)
 
 func _physics_process(delta: float) -> void:
-	
 	# Gravità
 	if not is_on_floor():
 		velocity += get_gravity() * delta
