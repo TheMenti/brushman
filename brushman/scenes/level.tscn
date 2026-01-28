@@ -1,29 +1,12 @@
-[gd_scene format=4 uid="uid://iufehv0ajlad"]
+[gd_scene format=4 uid="uid://dggnq6lvh6kpu"]
 
-[ext_resource type="PackedScene" uid="uid://ddhdf320n15ie" path="res://scenes/PauseMenu.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" path="res://scenes/PauseMenu.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://djhffbkoq2v0e" path="res://scripts/level.gd" id="1_6phgx"]
 [ext_resource type="Texture2D" uid="uid://cdv3p4d76a0yw" path="res://assets/tileset/imgProva.png" id="2_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://0nc3wqtnc4w6" path="res://assets/skybox/sk4.png" id="3_w8frs"]
-[ext_resource type="PackedScene" uid="uid://dx6sjq6wj7efm" path="res://scenes/player.tscn" id="4_mx8sn"]
-[ext_resource type="PackedScene" uid="uid://mabpispcvbc2" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
-
-[sub_resource type="GDScript" id="GDScript_rd3vj"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func on_quit_btn_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/menu_hud.tscn\")
-	pass # Replace with function body.
-"
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_mx8sn"]
+[ext_resource type="PackedScene" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://bfld2j7xx0dju" path="res://Scenes/enemies/scribble.tscn" id="6_0f350"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
 texture = ExtResource("2_w7c3h")
@@ -131,7 +114,8 @@ sources/2 = SubResource("TileSetAtlasSource_mx8sn")
 
 [node name="Level" type="Node2D" unique_id=493140446]
 position = Vector2(527, 246)
-script = SubResource("GDScript_rd3vj")
+script = ExtResource("1_6phgx")
+level_scene = null
 
 [node name="PauseMenu" parent="." unique_id=294160943 instance=ExtResource("1_2q6dc")]
 
@@ -145,3 +129,7 @@ position = Vector2(-365, 244)
 
 [node name="StaticBody2D" parent="." unique_id=1061743008 instance=ExtResource("5_ppgk2")]
 position = Vector2(602, 270)
+
+[node name="Scribble" parent="." unique_id=2102717077 instance=ExtResource("6_0f350")]
+position = Vector2(24.999998, 129.99998)
+scale = Vector2(0.2, 0.2)

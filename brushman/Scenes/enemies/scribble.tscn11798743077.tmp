@@ -2,10 +2,27 @@
 
 [ext_resource type="Script" uid="uid://bu7sofa8ij33c" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
 [ext_resource type="Texture2D" uid="uid://5pia4w1l8t7q" path="res://sprites/scribble.jpeg" id="2_kxaer"]
-[ext_resource type="Script" uid="uid://blt3erscs2p4f" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxaer"]
 radius = 18.041595
+
+[sub_resource type="GDScript" id="GDScript_fpbve"]
+resource_name = "enemy_hurtbox"
+script/source = "extends Area2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	#body_entered.connect(_on_hitbox_body_entered)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+		
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
 
@@ -29,7 +46,7 @@ shape = SubResource("CircleShape2D_kxaer")
 scale = Vector2(9.040001, 8.360001)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("3_b75ow")
+script = SubResource("GDScript_fpbve")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433931226]
 scale = Vector2(1.2, 1.201)
