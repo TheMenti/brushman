@@ -9,9 +9,11 @@ const JUMP_VELOCITY = -300.0
 @onready var white_brush_area = $WhiteBrushArea
 var max_dist_wb = 60.0
 
+
 func _input(event):
 	if event.is_action_pressed("brush_unmask"):
-		svela_platform() # <--- Qui c'era l'errore: usa 1 Tab in più dell'if, non 2 o 3.
+		svela_platform() 
+
 			
 func svela_platform():
 	# Assicurati che white_brush_area sia definito in alto con @onready
@@ -51,10 +53,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_pressed("jump") and not is_on_floor():
-		# print("jump")
+		#print("jump")
 		_animated_sprite.play("jumping")
 		velocity.y += delta * JUMP_VELOCITY - 3
 		
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
@@ -66,7 +69,16 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
+
 func attack():
 	if Input.is_action_pressed("brush_attack"):
 		pass
-		
+
+#funzione che gestisce danno ricevuto 
+func get_damage() -> void:
+	#aggiungere valore dinamico del danno
+	var hud = get_parent().get_node("health_bar")
+	hud.update_sprite(3)
+
+	
