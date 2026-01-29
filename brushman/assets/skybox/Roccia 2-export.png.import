@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpiaa0yxog1gp"
-path="res://.godot/imported/pressed_menu_btn.PNG-900ddf16fe163794e9fa7f58ac2f5ac5.ctex"
+uid="uid://gvlu8hpnwgg2"
+path="res://.godot/imported/Roccia 2-export.png-c281186c70c1e765c3bed12cd99740f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/pressed_menu_btn.PNG"
-dest_files=["res://.godot/imported/pressed_menu_btn.PNG-900ddf16fe163794e9fa7f58ac2f5ac5.ctex"]
+source_file="res://assets/skybox/Roccia 2-export.png"
+dest_files=["res://.godot/imported/Roccia 2-export.png-c281186c70c1e765c3bed12cd99740f9.ctex"]
 
 [params]
 
