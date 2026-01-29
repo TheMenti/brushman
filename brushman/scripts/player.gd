@@ -1,27 +1,25 @@
 class_name player extends CharacterBody2D
-const attack_hitbox = preload("res://scripts/hitbox.gd")
-@export var hitbox_shape: Shape2D
 @onready var _animated_sprite = $player_animated_sprites
 @export var stats:Stats
 @onready var SPEED := stats.speed
+@onready var _Hitbox = $Hitbox/CollisionShape2D
 const JUMP_VELOCITY = -300.0
+var facing := 1 # 1 destra, -1 sinistra
+
 
 func play_anim(name: String) -> void:
 	if _animated_sprite.animation != name:
 		_animated_sprite.play(name)
-
+		
 func _physics_process(delta: float) -> void:
 	# Gravità
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-		
-
+	
 	# Salto
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		play_anim("jumping")
-
 	
 	elif Input.is_action_pressed("jump") and not is_on_floor():
 		velocity.y += delta * JUMP_VELOCITY - 3
@@ -35,7 +33,15 @@ func _physics_process(delta: float) -> void:
 
 	if direction:
 		velocity.x = direction * SPEED
-		_animated_sprite.flip_h = direction < 0
+		if direction < 0:
+			_animated_sprite.flip_h = true
+			facing = -1
+			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+		else:
+			_animated_sprite.flip_h = false
+			facing = 1
+			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+			
 		if is_on_floor():
 			play_anim("walking")
 	else:
@@ -51,8 +57,15 @@ func _physics_process(delta: float) -> void:
 			play_anim("jumping")
 		
 	move_and_slide()
+	attack()
+	
+func attack() -> void:
+	var timer = Timer.new()
+	if Input.is_action_just_pressed("brush_attack"):
+		_Hitbox.set_deferred("disabled", false)
+		await get_tree().create_timer(0.5).timeout
+		_Hitbox.set_deferred("disabled", true)
+		
+	
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("brush_attack") and not event.is_echo():
-		var hitbox = Hitbox.new(stats, 0.5, hitbox_shape)
-		add_child(hitbox)
+	
