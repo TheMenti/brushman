@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cdv3p4d76a0yw" path="res://assets/tileset/imgProva.png" id="2_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://0nc3wqtnc4w6" path="res://assets/skybox/sk4.png" id="3_w8frs"]
 [ext_resource type="PackedScene" uid="uid://dx6sjq6wj7efm" path="res://scenes/player.tscn" id="4_mx8sn"]
-[ext_resource type="PackedScene" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://mabpispcvbc2" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://yik3i6di5u77" path="res://scenes/health_bar.tscn" id="6_2r41h"]
+[ext_resource type="PackedScene" uid="uid://d232uniiswsn0" path="res://scenes/idea.tscn" id="7_klq6b"]
 
 [sub_resource type="GDScript" id="GDScript_rd3vj"]
 script/source = "extends Node2D
@@ -148,3 +149,7 @@ position = Vector2(-365, 244)
 position = Vector2(602, 270)
 
 [node name="health_bar" parent="." unique_id=1927512815 instance=ExtResource("6_2r41h")]
+
+[node name="idea" parent="." unique_id=1576161959 instance=ExtResource("7_klq6b")]
+position = Vector2(-301, 236)
+scale = Vector2(0.3, 0.3)
