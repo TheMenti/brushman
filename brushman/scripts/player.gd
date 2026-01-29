@@ -79,4 +79,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.get_parent().stats.Faction.ENEMY:
 		var damage_amount = area.get_parent().stats.base_damage
 		stats.take_damage(damage_amount)
-		print("ouch")
+		_Hurtbox.set_deferred("disabled", true)
+		await get_tree().create_timer(1).timeout
+		_Hurtbox.set_deferred("disabled", false)
+		
