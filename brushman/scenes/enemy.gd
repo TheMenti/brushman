@@ -1,0 +1,8 @@
+extends Node2D
+@onready var _Hurtbox = $Hurtbox/CollisionShape2D
+
+func _on_area_entered(area: Area2D):
+	queue_free()
+
+	
+	
