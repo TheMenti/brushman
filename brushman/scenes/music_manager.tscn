@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://b1hs6gwh3bwc0" path="res://assets/audio/background_music.mp3" id="1_tn5dr"]
 
-[node name="MusicManager" type="AudioStreamPlayer2D" unique_id=364135122]
+[node name="MusicManager" type="AudioStreamPlayer" unique_id=1055557856]
 stream = ExtResource("1_tn5dr")
+volume_db = -15.0
 autoplay = true
