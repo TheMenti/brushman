@@ -82,7 +82,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(844, 122)
+size = Vector2(1534, 130)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3v2ag"]
 radius = 13.0
@@ -106,12 +106,12 @@ sprite_frames = SubResource("SpriteFrames_g2els")
 [node name="WhiteBrushArea" type="Area2D" parent="." unique_id=2039578710]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteBrushArea" unique_id=1300674176]
-position = Vector2(316, -5)
+position = Vector2(-29, 15)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1724013591]
 position = Vector2(-76, 52)
-offset = Vector2(40, -40)
+offset = Vector2(60, -30)
 zoom = Vector2(3.5, 3.5)
 
 [node name="player_hitbox" type="CollisionShape2D" parent="." unique_id=1732113809]

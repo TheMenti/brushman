@@ -21,7 +21,6 @@ MusicManager="*uid://bb2hdiic8b42f"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [global_group]
