@@ -1,23 +1,63 @@
-[gd_scene format=3 uid="uid://ddhdf320n15ie"]
+[gd_scene format=3 uid="uid://b3dbuaff6wn0e"]
 
-[ext_resource type="Script" uid="uid://d0tdplgkvhkjm" path="res://scripts/pause_menu.gd" id="1_jvnd5"]
 [ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_g4jo0"]
 [ext_resource type="Texture2D" uid="uid://b67sx7nfisqsc" path="res://assets/gui/ResumeButtons.png" id="3_40atx"]
 [ext_resource type="Texture2D" uid="uid://cyxjvr67bpwr7" path="res://assets/gui/ResumeButtonsPressed.png" id="4_yx35g"]
-[ext_resource type="Texture2D" uid="uid://e5ogl3r4tm7p" path="res://assets/gui/menu_btn.PNG" id="5_40atx"]
-[ext_resource type="Texture2D" uid="uid://dpiaa0yxog1gp" path="res://assets/gui/pressed_menu_btn.PNG" id="6_yx35g"]
+[ext_resource type="Texture2D" uid="uid://codvfkaq7i8hl" path="res://assets/gui/Menu_btn.png" id="5_40atx"]
+[ext_resource type="Texture2D" uid="uid://i2oyuefflc1w" path="res://assets/gui/Menu_btn_pressed.png" id="6_yx35g"]
+[ext_resource type="Texture2D" uid="uid://3x4rmacnx4wv" path="res://assets/gui/Restart_btn.png" id="7_vd2mf"]
+[ext_resource type="Texture2D" uid="uid://clpwrba02h4s" path="res://assets/gui/Restart_btn_pressed.png" id="8_abn1t"]
+
+[sub_resource type="GDScript" id="GDScript_yx35g"]
+script/source = "extends CanvasLayer
+
+@onready var menu_holder = $Control
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	menu_holder.visible = false
+
+#func _input(event):
+#	if event.is_action_pressed(\"ui_cancel\"):
+#			toggle_pause()
+
+func toggle_pause():
+	var is_paused = get_tree().paused
+	if is_paused:
+		get_tree().paused = false
+		menu_holder.visible = false
+	else:
+		get_tree().paused = true
+		menu_holder.visible = true
+		
+func _on_resume_btn_pressed() -> void:
+	toggle_pause()
+
+func _on_quit_btn_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file(\"res://scenes/menu.tscn\")
+
+func _on_restart_btn_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+"
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=294160943]
 process_mode = 3
-script = ExtResource("1_jvnd5")
+script = SubResource("GDScript_yx35g")
 
 [node name="Control" type="Control" parent="." unique_id=1753279746]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = 210.0
+offset_right = -379.0
+offset_bottom = -213.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=1873319145]
 layout_mode = 1
@@ -26,10 +66,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.0
-offset_top = -102.0
-offset_right = 139.0
-offset_bottom = 76.0
+offset_left = -227.5
+offset_top = -110.5
+offset_right = 227.5
+offset_bottom = 108.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.21960784, 0.21960784, 0.21960784, 0.65882355)
@@ -59,10 +99,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -86.0
-offset_top = -17.0
-offset_right = -42.0
-offset_bottom = 1.25
+offset_left = -131.5
+offset_top = -35.5
+offset_right = -63.5
+offset_bottom = -17.25
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.002090088
@@ -73,10 +113,16 @@ layout_mode = 2
 texture_normal = ExtResource("3_40atx")
 texture_pressed = ExtResource("4_yx35g")
 
+[node name="restart_btn" type="TextureButton" parent="Control/ColorRect/HBoxContainer" unique_id=803401832]
+layout_mode = 2
+texture_normal = ExtResource("7_vd2mf")
+texture_pressed = ExtResource("8_abn1t")
+
 [node name="quit_btn" type="TextureButton" parent="Control/ColorRect/HBoxContainer" unique_id=1455576651]
 layout_mode = 2
 texture_normal = ExtResource("5_40atx")
 texture_pressed = ExtResource("6_yx35g")
 
 [connection signal="pressed" from="Control/ColorRect/HBoxContainer/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="Control/ColorRect/HBoxContainer/restart_btn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="Control/ColorRect/HBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]

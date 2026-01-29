@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bw8rjcx0o8b8d"]
+
+[ext_resource type="Script" uid="uid://crsra1k6db20t" path="res://scripts/menu.gd" id="1_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://ctyemi435w1b4" path="res://assets/gui/PlayButtons.png" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://bvhu6aorhn8wf" path="res://assets/gui/PlayButtonsPressed.png" id="2_4ytvr"]
+[ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bwdclkr7o23j3" path="res://assets/gui/photoshop hud.png" id="2_v86rl"]
+[ext_resource type="Texture2D" uid="uid://ubvao0ftau06" path="res://assets/gui/QuitButtons.png" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://sejdtvobnlid" path="res://assets/gui/QuitButtonsPressed.png" id="4_v86rl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_474hf"]
+texture = ExtResource("2_v86rl")
+
+[node name="MenuProva" type="Control" unique_id=1085985208]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ytvr")
+
+[node name="Panel" type="Panel" parent="." unique_id=1552345152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_474hf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1110663813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=560453831]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g3eks")
+theme_override_font_sizes/font_size = 100
+text = "BRUSHMAN"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=234183759]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="startBtn" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=48693520]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+texture_pressed = ExtResource("2_4ytvr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="quitBtn" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=1374204389]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_g3eks")
+texture_pressed = ExtResource("4_v86rl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/startBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/quitBtn" to="." method="_on_quit_btn_pressed"]
