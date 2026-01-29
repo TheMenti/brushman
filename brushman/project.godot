@@ -11,9 +11,21 @@ config_version=5
 [application]
 
 config/name="Brushman"
-run/main_scene="uid://b4x04kpv4sp36"
+run/main_scene="uid://bw8rjcx0o8b8d"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://sprites/icon.svg"
+
+[autoload]
+
+MusicManager="*uid://bb2hdiic8b42f"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[global_group]
+
+ghost_platform=""
 
 [input]
 
@@ -57,6 +69,7 @@ brush_unmask={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
