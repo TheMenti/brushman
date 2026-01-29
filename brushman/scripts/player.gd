@@ -1,61 +1,26 @@
 class_name player extends CharacterBody2D
-const attack_hitbox = preload("res://scripts/hitbox.gd")
-@export var hitbox_shape: Shape2D
 @onready var _animated_sprite = $player_animated_sprites
 @export var stats:Stats
-
 @onready var SPEED := stats.speed
-
-@onready var feedback_label = $FeedBackLabel
-@onready var white_brush_area = $WhiteBrushArea
-var max_dist_wb = 150.0
-
+@onready var _Hitbox = $Hitbox/CollisionShape2D
+@onready var _Hurtbox = $Hurtbox/CollisionShape2D
 const JUMP_VELOCITY = -300.0
+var facing := 1 # 1 destra, -1 sinistra
+
 
 func play_anim(name: String) -> void:
 	if _animated_sprite.animation != name:
 		_animated_sprite.play(name)
-
-#variabile per bloccare gioco se player muore per gestione menu
-var is_dead = false
-func return_player_status():
-	return is_dead
-
-func svela_platform():
-	var area_individuata = white_brush_area.get_overlapping_areas()
-	
-	for area in area_individuata:
-		var platform = area.get_parent()
-
-		var distance = global_position.distance_to(platform.global_position)
 		
-		#controllo distanza per usare pennello 
-		if distance > max_dist_wb:
-			#print("too far")
-			feedback_label.text = "Too Far!"
-			feedback_label.visible = true
-			
-			await get_tree().create_timer(2.0).timeout
-			feedback_label.visible = false
-			continue
-		
-		if platform.has_method("rivela_piattaforma"):
-			platform.rivela_piattaforma()
-
-
-
 func _physics_process(delta: float) -> void:
 	# Gravità
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-		
-
+	
 	# Salto
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		play_anim("jumping")
-
 	
 	elif Input.is_action_pressed("jump") and not is_on_floor():
 		velocity.y += delta * JUMP_VELOCITY - 3
@@ -69,7 +34,15 @@ func _physics_process(delta: float) -> void:
 
 	if direction:
 		velocity.x = direction * SPEED
-		_animated_sprite.flip_h = direction < 0
+		if direction < 0:
+			_animated_sprite.flip_h = true
+			facing = -1
+			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+		else:
+			_animated_sprite.flip_h = false
+			facing = 1
+			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+			
 		if is_on_floor():
 			play_anim("walking")
 	else:
@@ -85,25 +58,28 @@ func _physics_process(delta: float) -> void:
 			play_anim("jumping")
 		
 	move_and_slide()
+	attack()
+	
+func attack() -> void:
+	var timer = Timer.new()
+	if Input.is_action_just_pressed("brush_attack"):
+		_Hitbox.set_deferred("disabled", false)
+		await get_tree().create_timer(0.5).timeout
+		_Hitbox.set_deferred("disabled", true)
+		
+	
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("brush_attack") and not event.is_echo():
-		var hitbox = Hitbox.new(stats, 0.5, hitbox_shape)
-		add_child(hitbox)
 	
-	if event.is_action_pressed("brush_unmask"):
-		print("attivato")
-		svela_platform()
 
-func get_damage(dmg) -> void:
-	var hp = stats.base_health - dmg
-	stats.base_health = hp
-	var hud = get_parent().get_node("health_bar")
-	hud.update_sprite(hp)
-	
-	if(stats.base_health <= 0):
-		is_dead = true
-		var death_hud = get_parent().get_node("death_screen")
-		stats.base_health = stats.max_health
-		death_hud.showDeathScreen()
-	
+
+
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.get_parent().stats.Faction.ENEMY:
+		var damage_amount = area.get_parent().stats.base_damage
+		stats.take_damage(damage_amount)
+		_Hurtbox.set_deferred("disabled", true)
+		await get_tree().create_timer(1).timeout
+		_Hurtbox.set_deferred("disabled", false)
+		
