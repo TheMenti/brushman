@@ -22,6 +22,7 @@ func initialize_stats():
 	
 func take_damage(amount: int):
 	current_health -= amount
+	
 
 func _on_health_set(value: float):
 	current_health = value
