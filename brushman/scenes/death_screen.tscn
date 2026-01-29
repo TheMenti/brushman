@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://ch4krp3hin6h7"]
+
+[ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="1_gwety"]
+[ext_resource type="Script" uid="uid://b1nie4utkkw36" path="res://scripts/death_screen.gd" id="1_wfw3d"]
+[ext_resource type="Texture2D" uid="uid://3x4rmacnx4wv" path="res://assets/gui/Restart_btn.png" id="2_wfw3d"]
+[ext_resource type="Texture2D" uid="uid://clpwrba02h4s" path="res://assets/gui/Restart_btn_pressed.png" id="3_wtkkp"]
+[ext_resource type="Texture2D" uid="uid://codvfkaq7i8hl" path="res://assets/gui/Menu_btn.png" id="4_wraau"]
+[ext_resource type="Texture2D" uid="uid://i2oyuefflc1w" path="res://assets/gui/Menu_btn_pressed.png" id="5_vyrcq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcvlw"]
+bg_color = Color(0, 0, 0, 0.24313726)
+
+[node name="death_screen" type="CanvasLayer" unique_id=683532927]
+process_mode = 3
+script = ExtResource("1_wfw3d")
+
+[node name="Control" type="Control" parent="." unique_id=967307418]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 335.0
+offset_top = 179.0
+offset_right = 806.0
+offset_bottom = 410.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="Control" unique_id=762603459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcvlw")
+
+[node name="MenuContainer" type="VBoxContainer" parent="Control" unique_id=1268882512]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -42.5
+offset_right = 196.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/MenuContainer" unique_id=1494021614]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gwety")
+theme_override_font_sizes/font_size = 84
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ButtonsRow" type="HBoxContainer" parent="Control/MenuContainer" unique_id=533327589]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="tryAgainBtn" type="TextureButton" parent="Control/MenuContainer/ButtonsRow" unique_id=66632405]
+custom_minimum_size = Vector2(80, 65)
+layout_mode = 2
+texture_normal = ExtResource("2_wfw3d")
+texture_pressed = ExtResource("3_wtkkp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="quitBTn" type="TextureButton" parent="Control/MenuContainer/ButtonsRow" unique_id=938330436]
+custom_minimum_size = Vector2(80, 65)
+layout_mode = 2
+texture_normal = ExtResource("4_wraau")
+texture_pressed = ExtResource("5_vyrcq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/MenuContainer/ButtonsRow/tryAgainBtn" to="." method="_on_try_again_btn_pressed"]
+[connection signal="pressed" from="Control/MenuContainer/ButtonsRow/quitBTn" to="." method="_on_quit_btn_pressed"]
