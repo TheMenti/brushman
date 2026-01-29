@@ -7,6 +7,13 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
+[sub_resource type="Resource" id="Resource_lbhrr"]
+script = ExtResource("1_dinhu")
+base_health = 1.0
+base_damage = 0.5
+faction = 1
+metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbhrr"]
 radius = 27.018513
 
@@ -35,6 +42,7 @@ position = Vector2(597, -433)
 [node name="enemy" type="Node2D" parent="." unique_id=1397281192]
 position = Vector2(555, -421)
 script = ExtResource("3_lbhrr")
+stats = SubResource("Resource_lbhrr")
 
 [node name="Sprite2D" type="Sprite2D" parent="enemy" unique_id=1058042980]
 position = Vector2(-40, 39.5)
@@ -43,7 +51,6 @@ texture = ExtResource("3_lnu2h")
 
 [node name="Area2D" type="Area2D" parent="enemy" unique_id=1717910844]
 collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/Area2D" unique_id=525531748]
 position = Vector2(-40, 39)
