@@ -3,6 +3,7 @@ class_name player extends CharacterBody2D
 @export var stats:Stats
 @onready var SPEED := stats.speed
 @onready var _Hitbox = $Hitbox/CollisionShape2D
+@onready var _Hurtbox = $Hurtbox/CollisionShape2D
 const JUMP_VELOCITY = -300.0
 var facing := 1 # 1 destra, -1 sinistra
 
@@ -69,3 +70,13 @@ func attack() -> void:
 	
 
 	
+
+
+
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.get_parent().stats.Faction.ENEMY:
+		var damage_amount = area.get_parent().stats.base_damage
+		stats.take_damage(damage_amount)
+		print("ouch")
