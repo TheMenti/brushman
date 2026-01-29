@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mabpispcvbc2"]
 
-[ext_resource type="Texture2D" uid="uid://cdv3p4d76a0yw" path="res://assets/tileset/imgProva.png" id="1_f311d"]
 [ext_resource type="Script" uid="uid://dmtffi5sm18un" path="res://ghost_platform.gd" id="1_owp7r"]
+[ext_resource type="Texture2D" uid="uid://cuwy6x1auf0lf" path="res://assets/tileset/Tileset Erba.png" id="2_owp7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owp7r"]
 size = Vector2(42, 41)
@@ -13,10 +13,11 @@ size = Vector2(72, 68)
 script = ExtResource("1_owp7r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=565712913]
-position = Vector2(77, 47)
-texture = ExtResource("1_f311d")
+position = Vector2(77, 45.75)
+scale = Vector2(1, 0.9468085)
+texture = ExtResource("2_owp7r")
 region_enabled = true
-region_rect = Rect2(0, 0, 49, 48)
+region_rect = Rect2(0, 17.5, 49, 45.490707)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1025285506]
 position = Vector2(77, 46.5)

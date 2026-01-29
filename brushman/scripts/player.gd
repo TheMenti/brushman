@@ -8,7 +8,7 @@ const attack_hitbox = preload("res://scripts/hitbox.gd")
 
 @onready var feedback_label = $FeedBackLabel
 @onready var white_brush_area = $WhiteBrushArea
-var max_dist_wb = 60.0
+var max_dist_wb = 150.0
 
 const JUMP_VELOCITY = -300.0
 
@@ -23,7 +23,6 @@ func return_player_status():
 
 func svela_platform():
 	var area_individuata = white_brush_area.get_overlapping_areas()
-	get_damage(1)
 	
 	for area in area_individuata:
 		var platform = area.get_parent()
