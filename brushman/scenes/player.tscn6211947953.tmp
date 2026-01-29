@@ -69,46 +69,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3v2ag"]
-radius = 11.0
-height = 72.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(40.625, 76)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jej6c"]
-radius = 13.0
-height = 66.0
+radius = 9.0
+height = 78.0
 
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
-position = Vector2(62, 52)
+position = Vector2(75, 51)
 collision_mask = 2
 script = ExtResource("1_d2wvv")
 
 [node name="player_animated_sprites" type="AnimatedSprite2D" parent="." unique_id=695863480]
-position = Vector2(3, 12)
+position = Vector2(2, 20)
 scale = Vector2(0.03617961, 0.029981371)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"walking"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
-position = Vector2(-2, 11)
+[node name="player_hitbox" type="CollisionShape2D" parent="." unique_id=1732113809]
+position = Vector2(-1, 20)
 shape = SubResource("CapsuleShape2D_3v2ag")
-
-[node name="Hitbox" type="Area2D" parent="." unique_id=1678830769]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=814652836]
-position = Vector2(21.6875, 10)
-shape = SubResource("RectangleShape2D_d2wvv")
-disabled = true
-
-[node name="Hurtbox" type="Area2D" parent="." unique_id=703684711]
-position = Vector2(2, -1)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1377391845]
-position = Vector2(-4, 12)
-shape = SubResource("CapsuleShape2D_jej6c")
-
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
