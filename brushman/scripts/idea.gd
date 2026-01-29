@@ -13,7 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if touched:
 		animation.play("picked")
-		animation.animation_finished.connect(_on_destroy)
 	else:
 		animation.play("default")
 
@@ -21,7 +20,9 @@ func _on_destroy():
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
+	print("LOG - [picked idea]")
 	touched = true
 	picked.emit()
 	set_deferred("monitoring", false)
 	set_deferred("monitorable", false)
+	animation.animation_finished.connect(_on_destroy)

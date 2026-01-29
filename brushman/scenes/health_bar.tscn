@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dfhqe27h5p6a5" path="res://assets/gui/HealtBar2HP.png" id="4_5xgdr"]
 [ext_resource type="Texture2D" uid="uid://qfxh1of72px4" path="res://assets/gui/HealtBar1HP.png" id="5_oeie6"]
 [ext_resource type="Texture2D" uid="uid://dwilexm3kvn48" path="res://assets/gui/HealtBar0HP.png" id="6_x53g4"]
+[ext_resource type="Texture2D" uid="uid://btxrojaipgpy0" path="res://sprites/Animazione idea idle/Sprite-0001.png" id="8_5xgdr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yg0xg"]
 animations = [{
@@ -39,8 +40,13 @@ script = ExtResource("1_s32md")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=535814370]
 position = Vector2(78, 33)
-scale = Vector2(2, 2)
+scale = Vector2(2.3200011, 2.3200011)
 sprite_frames = SubResource("SpriteFrames_yg0xg")
 animation = &"health_bar"
 frame = 5
 frame_progress = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=266216478]
+position = Vector2(35, 77)
+scale = Vector2(2.640001, 2.640001)
+texture = ExtResource("8_5xgdr")

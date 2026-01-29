@@ -147,7 +147,7 @@ animations = [{
 
 [node name="idea" type="Area2D" unique_id=1576161959 groups=["idea"]]
 collision_layer = 7
-collision_mask = 7
+collision_mask = 6
 script = ExtResource("1_2yuoy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205789703]
@@ -156,8 +156,6 @@ shape = SubResource("CircleShape2D_rti7w")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=574670213]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_e70b2")
-animation = &"picked"
-frame = 10
-frame_progress = 1.0
+frame_progress = 0.5903486
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

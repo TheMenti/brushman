@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://iufehv0ajlad"]
 
-[ext_resource type="Script" uid="uid://ci5btiql4q5y2" path="res://scripts/level.gd" id="1_8c41q"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_8c41q"]
 [ext_resource type="PackedScene" uid="uid://ciear0ytkbwio" path="res://scenes/new_pause_menu.tscn" id="2_8c41q"]
 [ext_resource type="Texture2D" uid="uid://wfov37wc4ffs" path="res://assets/tileset/Tileset Mattoni.png" id="3_olg7q"]
 [ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="4_klq6b"]
@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cuwy6x1auf0lf" path="res://assets/tileset/Tileset Erba.png" id="4_t1rx8"]
 [ext_resource type="PackedScene" uid="uid://mabpispcvbc2" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://yik3i6di5u77" path="res://scenes/health_bar.tscn" id="6_2r41h"]
-[ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
-[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="8_t1rx8"]
+[ext_resource type="PackedScene" uid="uid://d232uniiswsn0" path="res://scenes/idea.tscn" id="7_klq6b"]
+[ext_resource type="PackedScene" path="res://scenes/death_screen.tscn" id="8_b121j"]
+[ext_resource type="Script" path="res://scripts/stats.gd" id="8_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8iemx"]
@@ -95,7 +96,6 @@ max_health = 5.0
 base_health = 5.0
 base_damage = 1.0
 speed = 225.0
-metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [node name="Level" type="Node2D" unique_id=493140446]
 process_mode = 3
@@ -236,3 +236,7 @@ position = Vector2(911, -477)
 position = Vector2(1593, 214)
 
 [node name="death_screen" parent="." unique_id=1719397258 instance=ExtResource("8_b121j")]
+
+[node name="idea" parent="." unique_id=1576161959 instance=ExtResource("7_klq6b")]
+position = Vector2(-317, 242)
+scale = Vector2(0.12000123, 0.12000123)
