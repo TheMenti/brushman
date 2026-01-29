@@ -1,10 +1,22 @@
 [gd_scene format=3 uid="uid://sf0tpyijqmb6"]
 
+[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="1_dinhu"]
 [ext_resource type="PackedScene" uid="uid://dx6sjq6wj7efm" path="res://scenes/player.tscn" id="1_uwrxv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqjtg"]
+radius = 40.0
+
+[sub_resource type="Resource" id="Resource_lnu2h"]
+script = ExtResource("1_dinhu")
+base_health = 5.0
+base_damage = 1.0
+speed = 300.0
+metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
+
 [node name="Game" type="Node2D" unique_id=595699884]
+position = Vector2(-19, 105)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1759053786]
 
@@ -12,8 +24,10 @@
 position = Vector2(467, -356)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="Player" parent="." unique_id=893161433 instance=ExtResource("1_uwrxv")]
-position = Vector2(510, -423)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=881680488]
 position = Vector2(597, -433)
+
+[node name="Player" parent="." unique_id=893161433 instance=ExtResource("1_uwrxv")]
+position = Vector2(430, -398)
+hitbox_shape = SubResource("CircleShape2D_yqjtg")
+stats = SubResource("Resource_lnu2h")

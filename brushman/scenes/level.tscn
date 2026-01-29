@@ -1,31 +1,14 @@
 [gd_scene format=4 uid="uid://iufehv0ajlad"]
 
-[ext_resource type="PackedScene" uid="uid://ddhdf320n15ie" path="res://scenes/PauseMenu.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://ci5btiql4q5y2" path="res://scripts/level.gd" id="1_8c41q"]
+[ext_resource type="PackedScene" uid="uid://ciear0ytkbwio" path="res://scenes/new_pause_menu.tscn" id="2_8c41q"]
 [ext_resource type="Texture2D" uid="uid://cdv3p4d76a0yw" path="res://assets/tileset/imgProva.png" id="2_w7c3h"]
 [ext_resource type="Texture2D" uid="uid://0nc3wqtnc4w6" path="res://assets/skybox/sk4.png" id="3_w8frs"]
 [ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="4_klq6b"]
 [ext_resource type="PackedScene" uid="uid://dx6sjq6wj7efm" path="res://scenes/player.tscn" id="4_mx8sn"]
-[ext_resource type="PackedScene" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://mabpispcvbc2" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://yik3i6di5u77" path="res://scenes/health_bar.tscn" id="6_2r41h"]
-
-[sub_resource type="GDScript" id="GDScript_rd3vj"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func on_quit_btn_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/menu_hud.tscn\")
-	pass # Replace with function body.
-"
+[ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
 texture = ExtResource("2_w7c3h")
@@ -134,10 +117,12 @@ sources/0 = SubResource("TileSetAtlasSource_w7c3h")
 sources/2 = SubResource("TileSetAtlasSource_mx8sn")
 
 [node name="Level" type="Node2D" unique_id=493140446]
+process_mode = 3
 position = Vector2(527, 246)
-script = SubResource("GDScript_rd3vj")
+script = ExtResource("1_8c41q")
 
-[node name="PauseMenu" parent="." unique_id=294160943 instance=ExtResource("1_2q6dc")]
+[node name="new_pause_menu" parent="." unique_id=683532927 instance=ExtResource("2_8c41q")]
+process_mode = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=951431760]
 position = Vector2(-13, -25)
@@ -169,6 +154,7 @@ space bar - to jump
 "
 
 [node name="Player" parent="." unique_id=893161433 instance=ExtResource("4_mx8sn")]
+process_mode = 1
 position = Vector2(-365, 244)
 
 [node name="StaticBody2D" parent="." unique_id=1061743008 instance=ExtResource("5_ppgk2")]
@@ -181,3 +167,5 @@ position = Vector2(1077, 195)
 
 [node name="StaticBody2D3" parent="." unique_id=667233816 instance=ExtResource("5_ppgk2")]
 position = Vector2(1200, -37)
+
+[node name="death_screen" parent="." unique_id=1719397258 instance=ExtResource("8_b121j")]
