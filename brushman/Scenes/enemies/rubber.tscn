@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dcju7btgv30a4"]
+
+[ext_resource type="Script" uid="uid://m62wd1wdq030" path="res://scripts/enemies/rubber.gd" id="2_bvcmf"]
+[ext_resource type="Texture2D" uid="uid://bxj26shmfnro1" path="res://sprites/rubber.png" id="2_ua0bl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opkmn"]
+
+[node name="Rubber" type="CharacterBody2D" unique_id=2102717077]
+scale = Vector2(0.325, 0.325)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_bvcmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ua0bl")
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=655088420]
+scale = Vector2(9.040001, 8.360001)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433931226]
+scale = Vector2(1.2272294, 1.2282519)
+shape = SubResource("CircleShape2D_bf1of")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1227972828]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270958617]
+scale = Vector2(9.492305, 9.492305)
+shape = SubResource("CircleShape2D_opkmn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
