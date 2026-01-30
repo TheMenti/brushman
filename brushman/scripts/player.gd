@@ -8,6 +8,10 @@ class_name player extends CharacterBody2D
 @onready var _Hurtbox = $Hurtbox/CollisionShape2D
 @onready var white_brush_area = $WhiteBrushArea
 @onready var white_brush_shape = $WhiteBrushArea/CollisionShape2D
+@onready var jump_sound = $AudioStreamPlayer
+@onready var death_sound = $AudioStreamPlayer2
+@onready var swoosh_sound = $AudioStreamPlayer3
+@onready var hit_sound = $AudioStreamPlayer4
 
 const JUMP_VELOCITY = -300.0
 var is_unmasking = false
@@ -36,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Salto
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		#$JumpSound.play()
+		jump_sound.play()
 		velocity.y = JUMP_VELOCITY
 		if not is_attacking and not is_unmasking:
 			play_anim("jumping")
@@ -80,6 +84,7 @@ func _physics_process(delta: float) -> void:
 	
 func attack() -> void:
 	if Input.is_action_just_pressed("brush_attack"):
+		swoosh_sound.play()
 		if not is_attacking and not is_unmasking:
 			is_attacking = true
 			play_anim("attack_brush")
@@ -107,6 +112,7 @@ func reveal_platform() -> void:
 
 
 func search_for_ghost_platform():
+	swoosh_sound.play()
 	print("ricerca chiamata")
 	is_unmasking = true
 	play_anim("brush_unmask")

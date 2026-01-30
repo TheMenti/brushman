@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bsuxi8yirkthf" path="res://sprites/jumping/Jumping_Frame.png" id="6_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://dbhqbbi83inwf" path="res://sprites/Walking/4.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://dj2j5gvesgdpy" path="res://sprites/Walking/5.png" id="7_d2wvv"]
+[ext_resource type="AudioStream" uid="uid://cf0o0s5dasfbw" path="res://assets/audio/cartoon-jump-6462.mp3" id="13_jej6c"]
+[ext_resource type="AudioStream" uid="uid://ci4j8ebj22pa2" path="res://assets/audio/Morte.mp3" id="16_a8ls1"]
+[ext_resource type="AudioStream" uid="uid://cx2dmumxoyxyg" path="res://assets/audio/swoosh.mp3" id="17_qfm1y"]
 
 [sub_resource type="Resource" id="Resource_oprun"]
 script = ExtResource("2_f1ej7")
@@ -103,12 +106,12 @@ radius = 2.0
 height = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jej6c"]
-size = Vector2(81, 14)
+size = Vector2(44.0869, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
 position = Vector2(61, 52)
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 script = ExtResource("1_d2wvv")
 stats = SubResource("Resource_oprun")
 
@@ -118,7 +121,7 @@ scale = Vector2(0.007897958, 0.007034237)
 sprite_frames = SubResource("SpriteFrames_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
-position = Vector2(-0.4131031, 3.39888)
+position = Vector2(-1.9073486e-06, 4)
 shape = SubResource("CapsuleShape2D_3v2ag")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1678830769]
@@ -126,7 +129,7 @@ position = Vector2(-9, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=814652836]
-position = Vector2(19.335938, 4.125)
+position = Vector2(19.749039, 4.72612)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
@@ -136,7 +139,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1377391845]
-position = Vector2(-2.3650732, 4.40735)
+position = Vector2(-1.951972, 5.0084705)
 shape = SubResource("CapsuleShape2D_jej6c")
 
 [node name="WhiteBrushArea" type="Area2D" parent="." unique_id=88383999]
@@ -145,12 +148,24 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteBrushArea" unique_id=238013774]
 process_mode = 1
-position = Vector2(44, 4)
+position = Vector2(25.95655, 4.60112)
 shape = SubResource("RectangleShape2D_jej6c")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=33614475]
 zoom = Vector2(4, 4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=172503298]
+stream = ExtResource("13_jej6c")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=43851996]
+stream = ExtResource("16_a8ls1")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=1750675002]
+stream = ExtResource("17_qfm1y")
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." unique_id=258414711]
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="WhiteBrushArea" to="." method="_on_white_brush_area_area_entered"]
