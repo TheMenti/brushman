@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://yik3i6di5u77" path="res://scenes/health_bar.tscn" id="6_2r41h"]
 [ext_resource type="Texture2D" uid="uid://nx13tn2yrnma" path="res://assets/skybox/Cielo.png" id="8_82cfe"]
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
-[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="8_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 [ext_resource type="Texture2D" uid="uid://boqtkllh33dl4" path="res://assets/skybox/Grotta.png" id="9_pqd0y"]
 [ext_resource type="Texture2D" uid="uid://ddqj432iepyuq" path="res://assets/tileset/Tileset mergt.png" id="10_h6wmr"]
@@ -438,7 +437,7 @@ sources/3 = SubResource("TileSetAtlasSource_5k0ak")
 sources/5 = SubResource("TileSetAtlasSource_wu01b")
 
 [sub_resource type="Resource" id="Resource_8iemx"]
-script = ExtResource("8_t1rx8")
+script = null
 base_health = 5.0
 base_damage = 1.0
 speed = 225.0
