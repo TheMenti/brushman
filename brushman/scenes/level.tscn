@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://5e03uqfb7w4m" path="res://scenes/ghost_platform2.tscn" id="12_8iemx"]
-[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://scenes/wb_kill_zone.tscn" id="16_arp2o"]
+[ext_resource type="PackedScene" path="res://scenes/wb_kill_zone.tscn" id="15_arp2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpun6"]
 texture = ExtResource("3_olg7q")
@@ -566,27 +566,31 @@ position = Vector2(6609, 1064)
 [node name="StaticBody2D10" parent="." unique_id=615712341 instance=ExtResource("12_8iemx")]
 position = Vector2(6019, 523)
 
-[node name="KillZone" parent="." unique_id=626647731 instance=ExtResource("16_arp2o")]
-position = Vector2(126, 399)
-
-[node name="KillZone2" parent="." unique_id=1253732745 instance=ExtResource("16_arp2o")]
-position = Vector2(524, 398)
-
-[node name="KillZone4" parent="." unique_id=417128713 instance=ExtResource("16_arp2o")]
-position = Vector2(3508, 1368)
-
-[node name="KillZone5" parent="." unique_id=1075382805 instance=ExtResource("16_arp2o")]
-position = Vector2(3640, 1368)
-
-[node name="KillZone6" parent="." unique_id=90862874 instance=ExtResource("16_arp2o")]
-position = Vector2(5428, 1366)
-
-[node name="KillZone8" parent="." unique_id=1935601251 instance=ExtResource("16_arp2o")]
-position = Vector2(4607, 1366)
-
-[node name="KillZone7" parent="." unique_id=1522794032 instance=ExtResource("16_arp2o")]
-position = Vector2(6091, 1318)
+[node name="KillZone3" parent="." unique_id=626647731 instance=ExtResource("15_arp2o")]
+position = Vector2(3536, 1368.0001)
+scale = Vector2(1.1199805, 1.1199805)
 
 [node name="Player" parent="." unique_id=893161433 instance=ExtResource("4_mx8sn")]
 position = Vector2(358, 196)
 scale = Vector2(2.5911329, 2.5911329)
+
+[node name="KillZone9" parent="." unique_id=1391063865 instance=ExtResource("15_arp2o")]
+position = Vector2(5457, 1364)
+scale = Vector2(0.76, 1)
+
+[node name="KillZone10" parent="." unique_id=1235936336 instance=ExtResource("15_arp2o")]
+position = Vector2(6130, 1316)
+
+[node name="KillZone" parent="." unique_id=817075214 instance=ExtResource("15_arp2o")]
+position = Vector2(145, 389)
+scale = Vector2(0.1929122, 1.3664165)
+
+[node name="KillZone2" parent="." unique_id=2004668445 instance=ExtResource("15_arp2o")]
+position = Vector2(460, 518)
+
+[node name="KillZone4" parent="." unique_id=1109494440 instance=ExtResource("15_arp2o")]
+position = Vector2(1772, 869)
+
+[node name="KillZone5" parent="." unique_id=1520115315 instance=ExtResource("15_arp2o")]
+position = Vector2(4696, 1150)
+scale = Vector2(0.1948659, 1.324677)
