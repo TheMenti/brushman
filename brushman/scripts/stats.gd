@@ -1,25 +1,37 @@
 class_name Stats extends Resource
 
-enum faction{
+enum Faction{
 	PLAYER,
 	ENEMY,
 }
-@export var max_health:float = 100.0
-@export var damage:float
-signal health_reduced
-signal death 
 
-var health: int = 0: set = _on_health_set
+signal health_changed(new_health: int, max_health: int)
+signal death
+signal new_health(amount: float)
+
+#TODO mettere segnale per danno per modificare HUD
+
+@export var max_health: float
+@export var base_health:float 
+@export var base_damage:float
+@export var faction:Faction = Faction.PLAYER
+@export var speed:float
+
+var current_health:float
 
 func _init() -> void:
-	initialize_resources.call_deferred()
+	initialize_stats.call_deferred()
+
+func initialize_stats():
+	current_health = base_health
 	
-func initialize_resources() -> void:
-	health = max_health
-	print(health)
-	
-func _on_health_set(new_value: int) -> void:
-	health = new_value
-	if health <= 0:
+func take_damage(amount: float):
+	current_health -= amount
+	print(current_health)
+	if current_health <= 0:
+		current_health = max_health
 		death.emit()
-		
+	else:
+		new_health.emit(current_health)
+	
+	
