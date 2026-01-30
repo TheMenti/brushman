@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgsvkav0erpyq"
-path="res://.godot/imported/1.png-325cca5191c14a730949ce321a42b0cb.ctex"
+uid="uid://dgxa2oc22nmxl"
+path="res://.godot/imported/scribble.png-283088d170a953b60de32f4c5d1ef79f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/attack/1.png"
-dest_files=["res://.godot/imported/1.png-325cca5191c14a730949ce321a42b0cb.ctex"]
+source_file="res://sprites/scribble.png"
+dest_files=["res://.godot/imported/scribble.png-283088d170a953b60de32f4c5d1ef79f.ctex"]
 
 [params]
 

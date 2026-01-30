@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bfld2j7xx0dju"]
+
+[ext_resource type="Script" uid="uid://bu7sofa8ij33c" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
+[ext_resource type="Texture2D" uid="uid://5pia4w1l8t7q" path="res://sprites/scribble.jpeg" id="2_kxaer"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxaer"]
+radius = 18.041595
+
+[sub_resource type="GDScript" id="GDScript_fpbve"]
+resource_name = "enemy_hurtbox"
+script/source = "extends Area2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	#body_entered.connect(_on_hitbox_body_entered)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+		
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
+
+[node name="Scribble" type="CharacterBody2D" unique_id=2102717077]
+script = ExtResource("1_iwr0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_kxaer")
+flip_h = true
+region_rect = Rect2(0, 0, 100, 100)
+
+[node name="LedgeCheck" type="RayCast2D" parent="." unique_id=1834284078]
+target_position = Vector2(0, 83)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=597539440]
+scale = Vector2(4.3, 4.341)
+shape = SubResource("CircleShape2D_kxaer")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=655088420]
+scale = Vector2(9.040001, 8.360001)
+collision_layer = 2
+collision_mask = 2
+script = SubResource("GDScript_fpbve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433931226]
+scale = Vector2(1.2, 1.201)
+shape = SubResource("CircleShape2D_bf1of")
