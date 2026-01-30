@@ -386,7 +386,7 @@ metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [sub_resource type="Curve2D" id="Curve2D_gunhw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 755, 248, 0, 0, 0, 0, 847, 249, 0, 0, 0, 0, 847, 249, 0, 0, 0, 0, 755, 248)
+"points": PackedVector2Array(0, 0, 0, 0, 755, 248, 0, 0, 0, 0, 847, 249, 0, 0, 0, 0, 847, 243, 0, 0, 0, 0, 755, 243)
 }
 point_count = 4
 
@@ -636,7 +636,6 @@ curve = SubResource("Curve2D_gunhw")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1733069594]
 position = Vector2(755, 248)
 rotation = 0.010869138
-rotates = false
 script = ExtResource("19_8gofh")
 
 [node name="Rubber" parent="Path2D/PathFollow2D" unique_id=2102717077 instance=ExtResource("17_82cfe")]

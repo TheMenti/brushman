@@ -107,6 +107,8 @@ size = Vector2(81, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=893161433]
 position = Vector2(61, 52)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_d2wvv")
 stats = SubResource("Resource_oprun")
 
@@ -138,6 +140,8 @@ position = Vector2(-2.3650732, 4.40735)
 shape = SubResource("CapsuleShape2D_jej6c")
 
 [node name="WhiteBrushArea" type="Area2D" parent="." unique_id=88383999]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteBrushArea" unique_id=238013774]
 process_mode = 1
@@ -146,6 +150,8 @@ shape = SubResource("RectangleShape2D_jej6c")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=33614475]
+position = Vector2(0, -5)
+zoom = Vector2(2, 2)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="WhiteBrushArea" to="." method="_on_white_brush_area_area_entered"]
