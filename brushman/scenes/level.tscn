@@ -15,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://5e03uqfb7w4m" path="res://scenes/ghost_platform2.tscn" id="12_8iemx"]
-[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://scenes/wb_kill_zone.tscn" id="16_arp2o"]
+[ext_resource type="PackedScene" path="res://scenes/wb_kill_zone.tscn" id="16_arp2o"]
+[ext_resource type="PackedScene" uid="uid://dcju7btgv30a4" path="res://scenes/enemies/rubber.tscn" id="17_82cfe"]
+[ext_resource type="PackedScene" uid="uid://bfld2j7xx0dju" path="res://scenes/enemies/scribble.tscn" id="18_gunhw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpun6"]
 texture = ExtResource("3_olg7q")
@@ -590,3 +592,11 @@ position = Vector2(6091, 1318)
 [node name="Player" parent="." unique_id=893161433 instance=ExtResource("4_mx8sn")]
 position = Vector2(358, 196)
 scale = Vector2(2.5911329, 2.5911329)
+
+[node name="Rubber" parent="." unique_id=2102717077 instance=ExtResource("17_82cfe")]
+position = Vector2(627, 201)
+scale = Vector2(0.124999985, 0.124999985)
+
+[node name="Scribble" parent="." unique_id=1426556647 instance=ExtResource("18_gunhw")]
+position = Vector2(850, 314)
+scale = Vector2(0.07999998, 0.07999998)
