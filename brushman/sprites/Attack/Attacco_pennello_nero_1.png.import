@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpcua0x6or6q6"
-path="res://.godot/imported/3.png-91394424a3ecd06d8fba96c822ae4c60.ctex"
+uid="uid://bmlfau0e3bywo"
+path="res://.godot/imported/Attacco_pennello_nero_1.png-6cf9ea66cd6839f697865bcaf55ffd29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jumping/3.png"
-dest_files=["res://.godot/imported/3.png-91394424a3ecd06d8fba96c822ae4c60.ctex"]
+source_file="res://sprites/Attack/Attacco_pennello_nero_1.png"
+dest_files=["res://.godot/imported/Attacco_pennello_nero_1.png-6cf9ea66cd6839f697865bcaf55ffd29.ctex"]
 
 [params]
 
