@@ -25,6 +25,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 101.0
+offset_right = -148.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_474hf")
@@ -34,13 +36,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 417.0
-offset_top = 392.00003
-offset_right = -1049.0
-offset_bottom = -483.0
+offset_left = 434.00003
+offset_top = 406.0
+offset_right = -1032.0
+offset_bottom = -469.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.8399996, 1.8399996)
+scale = Vector2(1.7599995, 1.7599995)
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=560453831]
