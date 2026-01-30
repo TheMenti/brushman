@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bfld2j7xx0dju"]
 
-[ext_resource type="Script" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
+[ext_resource type="Script" uid="uid://bu7sofa8ij33c" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
 [ext_resource type="Texture2D" uid="uid://dgxa2oc22nmxl" path="res://sprites/scribble.png" id="2_bf1of"]
-[ext_resource type="Script" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
+[ext_resource type="Script" uid="uid://blt3erscs2p4f" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxaer"]
 radius = 18.041595
@@ -28,7 +28,6 @@ shape = SubResource("CircleShape2D_kxaer")
 [node name="Area2D" type="Area2D" parent="." unique_id=655088420]
 scale = Vector2(9.040001, 8.360001)
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("3_b75ow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433931226]
