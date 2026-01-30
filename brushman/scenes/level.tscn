@@ -15,10 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://5e03uqfb7w4m" path="res://scenes/ghost_platform2.tscn" id="12_8iemx"]
-[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://scenes/wb_kill_zone.tscn" id="16_arp2o"]
-[ext_resource type="PackedScene" uid="uid://dcju7btgv30a4" path="res://scenes/enemies/rubber.tscn" id="17_82cfe"]
-[ext_resource type="PackedScene" uid="uid://bfld2j7xx0dju" path="res://scenes/enemies/scribble.tscn" id="18_gunhw"]
-[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="19_gunhw"]
+[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://wb_kill_zone.tscn" id="15_arp2o"]
+[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="17_ux5qa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpun6"]
 texture = ExtResource("3_olg7q")
@@ -370,20 +368,15 @@ sources/0 = SubResource("TileSetAtlasSource_8iemx")
 sources/1 = SubResource("TileSetAtlasSource_64w2a")
 sources/2 = SubResource("TileSetAtlasSource_82cfe")
 
-[sub_resource type="Resource" id="Resource_gunhw"]
-script = ExtResource("19_gunhw")
+[sub_resource type="Resource" id="Resource_82cfe"]
+script = ExtResource("17_ux5qa")
+base_health = 5.0
 base_damage = 1.0
-faction = 1
-metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
-
-[sub_resource type="Resource" id="Resource_8gofh"]
-script = ExtResource("19_gunhw")
-base_damage = 1.0
-faction = 1
+speed = 250.0
 metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [node name="Level" type="Node2D" unique_id=493140446]
-process_mode = 3
+process_mode = 1
 position = Vector2(527, 246)
 script = ExtResource("1_8c41q")
 
@@ -581,38 +574,32 @@ position = Vector2(6609, 1064)
 [node name="StaticBody2D10" parent="." unique_id=615712341 instance=ExtResource("12_8iemx")]
 position = Vector2(6019, 523)
 
-[node name="KillZone" parent="." unique_id=626647731 instance=ExtResource("16_arp2o")]
-position = Vector2(126, 399)
-
-[node name="KillZone2" parent="." unique_id=1253732745 instance=ExtResource("16_arp2o")]
-position = Vector2(524, 398)
-
-[node name="KillZone4" parent="." unique_id=417128713 instance=ExtResource("16_arp2o")]
-position = Vector2(3508, 1368)
-
-[node name="KillZone5" parent="." unique_id=1075382805 instance=ExtResource("16_arp2o")]
-position = Vector2(3640, 1368)
-
-[node name="KillZone6" parent="." unique_id=90862874 instance=ExtResource("16_arp2o")]
-position = Vector2(5428, 1366)
-
-[node name="KillZone8" parent="." unique_id=1935601251 instance=ExtResource("16_arp2o")]
-position = Vector2(4607, 1366)
-
-[node name="KillZone7" parent="." unique_id=1522794032 instance=ExtResource("16_arp2o")]
-position = Vector2(6091, 1318)
+[node name="KillZone3" parent="." unique_id=626647731 instance=ExtResource("15_arp2o")]
+position = Vector2(3536, 1368.0001)
+scale = Vector2(1.1199805, 1.1199805)
 
 [node name="Player" parent="." unique_id=893161433 instance=ExtResource("4_mx8sn")]
 position = Vector2(358, 196)
 scale = Vector2(2.5911329, 2.5911329)
+stats = SubResource("Resource_82cfe")
 
-[node name="Rubber" parent="." unique_id=2102717077 instance=ExtResource("17_82cfe")]
-position = Vector2(627, 201)
-scale = Vector2(0.124999985, 0.124999985)
-stats = SubResource("Resource_gunhw")
+[node name="KillZone9" parent="." unique_id=1391063865 instance=ExtResource("15_arp2o")]
+position = Vector2(5457, 1364)
+scale = Vector2(0.76, 1)
 
-[node name="Scribble" parent="." unique_id=1426556647 instance=ExtResource("18_gunhw")]
-position = Vector2(850, 314)
-scale = Vector2(0.07999998, 0.07999998)
-collision_layer = 2
-stats = SubResource("Resource_8gofh")
+[node name="KillZone10" parent="." unique_id=1235936336 instance=ExtResource("15_arp2o")]
+position = Vector2(6130, 1316)
+
+[node name="KillZone" parent="." unique_id=817075214 instance=ExtResource("15_arp2o")]
+position = Vector2(145, 389)
+scale = Vector2(0.1929122, 1.3664165)
+
+[node name="KillZone2" parent="." unique_id=2004668445 instance=ExtResource("15_arp2o")]
+position = Vector2(460, 518)
+
+[node name="KillZone4" parent="." unique_id=1109494440 instance=ExtResource("15_arp2o")]
+position = Vector2(1772, 869)
+
+[node name="KillZone5" parent="." unique_id=1520115315 instance=ExtResource("15_arp2o")]
+position = Vector2(4696, 1150)
+scale = Vector2(0.1948659, 1.324677)
