@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d4cxpf6ukerlt" path="res://assets/skybox/sk3.png" id="5_arp2o"]
 [ext_resource type="PackedScene" uid="uid://mabpispcvbc2" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://yik3i6di5u77" path="res://scenes/health_bar.tscn" id="6_2r41h"]
+[ext_resource type="PackedScene" uid="uid://d232uniiswsn0" path="res://scenes/idea.tscn" id="7_klq6b"]
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
 [ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="8_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
@@ -370,7 +371,6 @@ sources/2 = SubResource("TileSetAtlasSource_82cfe")
 
 [sub_resource type="Resource" id="Resource_8iemx"]
 script = ExtResource("8_t1rx8")
-max_health = 5.0
 base_health = 5.0
 base_damage = 1.0
 speed = 225.0
@@ -600,3 +600,7 @@ position = Vector2(4607, 1366)
 
 [node name="KillZone7" parent="." unique_id=1522794032 instance=ExtResource("16_arp2o")]
 position = Vector2(6091, 1318)
+
+[node name="idea" parent="." unique_id=1576161959 instance=ExtResource("7_klq6b")]
+position = Vector2(342, 242)
+scale = Vector2(0.24000001, 0.24000001)

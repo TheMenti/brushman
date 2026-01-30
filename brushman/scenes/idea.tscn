@@ -146,8 +146,8 @@ animations = [{
 }]
 
 [node name="idea" type="Area2D" unique_id=1576161959 groups=["idea"]]
-collision_layer = 7
-collision_mask = 6
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_2yuoy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1205789703]
