@@ -37,11 +37,11 @@ func _physics_process(delta: float) -> void:
 		if direction < 0:
 			_animated_sprite.flip_h = true
 			facing = -1
-			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+			$".".scale.x =  scale.y * -1
 		else:
 			_animated_sprite.flip_h = false
 			facing = 1
-			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+			$".".scale.x =  scale.y * 1
 			
 		if is_on_floor():
 			play_anim("walking")
@@ -67,13 +67,6 @@ func attack() -> void:
 		await get_tree().create_timer(0.5).timeout
 		_Hitbox.set_deferred("disabled", true)
 		
-	
-
-	
-
-
-
-
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if area.get_parent().stats.Faction.ENEMY:
