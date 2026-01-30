@@ -15,5 +15,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Player caduto in killZone")
 		
-		if body.has_method("get_damage"):
-			body.get_damage(999)
+		if body.stats.has_method("take_damage"):
+			body.stats.take_damage(999)

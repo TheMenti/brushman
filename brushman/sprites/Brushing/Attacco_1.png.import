@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uerb01nfks67"
-path="res://.godot/imported/4.png-4cfb0439141885779446c7d1aacef910.ctex"
+uid="uid://b7kfp0jkgsbks"
+path="res://.godot/imported/Attacco_1.png-39cd1b9a7b846f3afbfabc539ce3e00a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jumping/4.png"
-dest_files=["res://.godot/imported/4.png-4cfb0439141885779446c7d1aacef910.ctex"]
+source_file="res://sprites/Brushing/Attacco_1.png"
+dest_files=["res://.godot/imported/Attacco_1.png-39cd1b9a7b846f3afbfabc539ce3e00a.ctex"]
 
 [params]
 
