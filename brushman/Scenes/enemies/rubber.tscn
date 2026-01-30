@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://dcju7btgv30a4"]
 
 [ext_resource type="Script" uid="uid://m62wd1wdq030" path="res://scripts/enemies/rubber.gd" id="2_bvcmf"]
+[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="2_opkmn"]
 [ext_resource type="Texture2D" uid="uid://bxj26shmfnro1" path="res://sprites/rubber.png" id="2_ua0bl"]
+
+[sub_resource type="Resource" id="Resource_qg4gm"]
+script = ExtResource("2_opkmn")
+base_damage = 1.0
+faction = 1
+metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
 
@@ -12,6 +19,7 @@ scale = Vector2(0.325, 0.325)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("2_bvcmf")
+stats = SubResource("Resource_qg4gm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
 scale = Vector2(0.1, 0.1)
