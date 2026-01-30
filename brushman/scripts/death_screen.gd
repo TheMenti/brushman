@@ -1,12 +1,14 @@
 extends CanvasLayer
 
 @onready var menuHolder = $Control
+@onready var death_sound = $DeathAudio
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	menuHolder.visible = false
 
 func showDeathScreen():
+	death_sound.play()
 	get_tree().paused = true
 	menuHolder.visible = true
 
