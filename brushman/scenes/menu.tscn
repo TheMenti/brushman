@@ -34,12 +34,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 417.0
+offset_top = 392.00003
+offset_right = -1049.0
+offset_bottom = -483.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.8399996, 1.8399996)
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=560453831]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3372549)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("2_g3eks")
 theme_override_font_sizes/font_size = 100
 text = "BRUSHMAN"
