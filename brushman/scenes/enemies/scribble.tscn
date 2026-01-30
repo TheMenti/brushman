@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bfld2j7xx0dju"]
 
-[ext_resource type="Script" uid="uid://bu7sofa8ij33c" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
-[ext_resource type="Texture2D" uid="uid://5pia4w1l8t7q" path="res://sprites/scribble.jpeg" id="2_kxaer"]
-[ext_resource type="Script" uid="uid://blt3erscs2p4f" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
+[ext_resource type="Script" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
+[ext_resource type="Texture2D" uid="uid://dgxa2oc22nmxl" path="res://sprites/scribble.png" id="2_bf1of"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxaer"]
 radius = 18.041595
@@ -14,7 +14,7 @@ script = ExtResource("1_iwr0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_kxaer")
+texture = ExtResource("2_bf1of")
 flip_h = true
 region_rect = Rect2(0, 0, 100, 100)
 
