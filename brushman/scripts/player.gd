@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 	
 	elif Input.is_action_pressed("jump") and not is_on_floor():
 		velocity.y += delta * JUMP_VELOCITY - 3
-		if velocity.y > 0 and not is_attacking and not is_unmasking:
+		if velocity.y > 0 and (not is_attacking and not is_unmasking):
 			play_anim("falling")
-		elif not is_on_floor() and not is_attacking and not is_unmasking:
+		elif not is_on_floor() and (not is_attacking and not is_unmasking):
 			play_anim("jumping")
 
 	# Movimento orizzontale
@@ -44,16 +44,16 @@ func _physics_process(delta: float) -> void:
 			_animated_sprite.flip_h = false
 			$".".scale.x =  scale.y * 1
 			
-		if is_on_floor() and not is_attacking and not is_unmasking:
+		if is_on_floor() and (not is_attacking and not is_unmasking):
 			play_anim("walking")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if is_on_floor():
+		if is_on_floor() and (not is_attacking and not is_unmasking):
 			play_anim("default")
 
 	# Animazione in aria
 	if not is_on_floor():
-		if velocity.y > 0 and not is_attacking and not is_unmasking:
+		if velocity.y > 0 and (not is_attacking and not is_unmasking):
 			play_anim("falling")
 		elif not is_attacking and not is_unmasking:
 			play_anim("jumping")
@@ -66,6 +66,7 @@ func attack() -> void:
 	if Input.is_action_just_pressed("brush_attack"):
 		if not is_attacking and not is_unmasking:
 			is_attacking = true
+			play_anim("attack_brush")
 			_Hitbox.set_deferred("disabled", false)
 			await get_tree().create_timer(0.5).timeout
 			_Hitbox.set_deferred("disabled", true)

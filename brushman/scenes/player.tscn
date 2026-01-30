@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dx6sjq6wj7efm"]
 
 [ext_resource type="Script" uid="uid://dj7bg4bqfc1h1" path="res://scripts/player.gd" id="1_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://c0ctoso1v1xtl" path="res://sprites/Nuova cartella/1.png" id="2_jej6c"]
 [ext_resource type="Texture2D" uid="uid://211niqufs58i" path="res://sprites/Static.png" id="2_smehm"]
+[ext_resource type="Texture2D" uid="uid://cagbu0pvnheh5" path="res://sprites/Nuova cartella/2.png" id="3_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://ciwpy2nrflh13" path="res://sprites/Walking/1.png" id="3_fjrip"]
 [ext_resource type="Texture2D" uid="uid://613m0f8ydhck" path="res://sprites/jumping/5.png" id="4_jej6c"]
 [ext_resource type="Texture2D" uid="uid://bo7s33g8g7a4i" path="res://sprites/jumping/2.png" id="4_oprun"]
@@ -14,6 +16,17 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jej6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f1ej7")
+}],
+"loop": true,
+"name": &"attack_brush",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_smehm")
@@ -87,7 +100,7 @@ script = ExtResource("1_d2wvv")
 position = Vector2(0.5868988, 4.39888)
 scale = Vector2(0.007897958, 0.007034237)
 sprite_frames = SubResource("SpriteFrames_g2els")
-animation = &"walking"
+animation = &"attack_brush"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
 position = Vector2(-0.4131031, 3.39888)
