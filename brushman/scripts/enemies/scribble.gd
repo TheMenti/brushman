@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var damage_amount: int = 1
 @export var gravity: float = 980.0
 @export var stats:Stats
+@onready var SPEED = stats.speed
 
 # 1 represents right, -1 represents left
 var direction: int = 1 
@@ -42,8 +43,10 @@ func flip_direction() -> void:
 	# Move the RayCast to the other side so it looks ahead of the new direction
 	ledge_check.position.x = abs(ledge_check.position.x) * direction
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	print("body_entered scribble")
-	if body.is_class("Player") :
-		queue_free()
+func _on_area_2d_area_entered(area: Area2D):
+	queue_free()
+
+func _process(delta):
+	position.x -= SPEED * delta
+	velocity.x -= -1 * SPEED
 		

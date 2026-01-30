@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://5e03uqfb7w4m" path="res://scenes/ghost_platform2.tscn" id="12_8iemx"]
-[ext_resource type="PackedScene" path="res://wb_kill_zone.tscn" id="15_arp2o"]
+[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://wb_kill_zone.tscn" id="15_arp2o"]
 [ext_resource type="PackedScene" uid="uid://dcju7btgv30a4" path="res://scenes/enemies/rubber.tscn" id="17_82cfe"]
 [ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="17_ux5qa"]
 [ext_resource type="PackedScene" uid="uid://bfld2j7xx0dju" path="res://scenes/enemies/scribble.tscn" id="18_gunhw"]
@@ -619,7 +619,7 @@ position = Vector2(4696, 1150)
 scale = Vector2(0.1948659, 1.324677)
 
 [node name="Rubber" parent="." unique_id=2102717077 instance=ExtResource("17_82cfe")]
-position = Vector2(854, 258.00003)
+position = Vector2(854, 248)
 scale = Vector2(0.11394864, 0.090893246)
 stats = SubResource("Resource_gunhw")
 
