@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ciear0ytkbwio"]
 
 [ext_resource type="Script" uid="uid://cyuwvs84fb15g" path="res://scripts/new_pause_menu.gd" id="1_q6hwn"]
+[ext_resource type="Texture2D" uid="uid://bb6cqgndx0ls7" path="res://assets/gui/Cornice_btn.png" id="2_bt32o"]
 [ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_iqh86"]
 [ext_resource type="Texture2D" uid="uid://b67sx7nfisqsc" path="res://assets/gui/ResumeButtons.png" id="2_q6hwn"]
 [ext_resource type="Texture2D" uid="uid://28qc3erm6hor" path="res://assets/gui/ResumeButtonPressed.png" id="3_bt32o"]
@@ -9,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://codvfkaq7i8hl" path="res://assets/gui/Menu_btn.png" id="5_vvilx"]
 [ext_resource type="Texture2D" uid="uid://i2oyuefflc1w" path="res://assets/gui/Menu_btn_pressed.png" id="6_r11ad"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcvlw"]
-bg_color = Color(0, 0, 0, 0.24313726)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vvilx"]
+texture = ExtResource("2_bt32o")
 
 [node name="new_pause_menu" type="CanvasLayer" unique_id=683532927]
 process_mode = 3
@@ -37,9 +38,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 62.5
+offset_top = -9.5
+offset_right = -64.5
+offset_bottom = 6.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vcvlw")
+theme_override_styles/panel = SubResource("StyleBoxTexture_vvilx")
 
 [node name="MenuContainer" type="VBoxContainer" parent="Control" unique_id=1268882512]
 layout_mode = 1
@@ -58,8 +63,12 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Control/MenuContainer" unique_id=1494021614]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.95686275, 0.8, 0.6313726, 1)
+theme_override_colors/font_shadow_color = Color(0.2784314, 0.1764706, 0.23529412, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("2_iqh86")
-theme_override_font_sizes/font_size = 84
+theme_override_font_sizes/font_size = 60
 text = "PAUSE"
 horizontal_alignment = 1
 
