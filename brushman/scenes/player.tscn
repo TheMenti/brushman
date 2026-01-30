@@ -146,6 +146,7 @@ shape = SubResource("RectangleShape2D_jej6c")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=33614475]
+zoom = Vector2(4, 4)
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="WhiteBrushArea" to="." method="_on_white_brush_area_area_entered"]
