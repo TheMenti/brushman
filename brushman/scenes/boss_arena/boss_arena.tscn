@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://doy6nxeupvg62"]
+
+[ext_resource type="Script" uid="uid://lbg0xt2h30he" path="res://scripts/enemies/boss_enemy.gd" id="1_j5khd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixhno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5khd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ix2u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnxlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr473"]
+
+[node name="BossArena" type="Node2D" unique_id=1252584628]
+
+[node name="TriggerZone" type="Area2D" parent="." unique_id=643120455]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerZone" unique_id=1036361685]
+shape = SubResource("RectangleShape2D_ixhno")
+
+[node name="BossCamera" type="Camera2D" parent="." unique_id=121400158]
+
+[node name="BossHealth" type="CanvasLayer" parent="." unique_id=1563216851]
+
+[node name="ProgressBar" type="ProgressBar" parent="BossHealth" unique_id=1064000113]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="ArenaWalls" type="StaticBody2D" parent="." unique_id=420903418]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArenaWalls" unique_id=1284838449]
+shape = SubResource("RectangleShape2D_j5khd")
+
+[node name="BossEnemy" type="CharacterBody2D" parent="." unique_id=1408958346]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_j5khd")
+
+[node name="HitBox" type="Area2D" parent="BossEnemy" unique_id=2058813202]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossEnemy/HitBox" unique_id=1752779719]
+shape = SubResource("CapsuleShape2D_4ix2u")
+
+[node name="HurtBox" type="Area2D" parent="BossEnemy" unique_id=1267734420]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossEnemy/HurtBox" unique_id=594520811]
+shape = SubResource("CapsuleShape2D_dnxlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossEnemy" unique_id=996489413]
+shape = SubResource("RectangleShape2D_nr473")
+
+[node name="Sprite2D" type="Sprite2D" parent="BossEnemy" unique_id=69282471]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="BossEnemy" unique_id=535979380]
+
+[connection signal="screen_exited" from="BossEnemy/VisibleOnScreenNotifier2D" to="BossEnemy" method="_on_visible_on_screen_notifier_2d_screen_exited"]
