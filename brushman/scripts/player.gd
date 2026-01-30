@@ -4,8 +4,14 @@ class_name player extends CharacterBody2D
 @onready var SPEED := stats.speed
 @onready var _Hitbox = $Hitbox/CollisionShape2D
 @onready var _Hurtbox = $Hurtbox/CollisionShape2D
+
+@onready var white_brush_area = $WhiteBrushArea
+@onready var white_brush_shape = $WhiteBrushArea/CollisionShape2D
+
 const JUMP_VELOCITY = -300.0
 var facing := 1 # 1 destra, -1 sinistra
+
+
 
 
 func play_anim(name: String) -> void:
@@ -59,6 +65,7 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 	attack()
+	reveal_platform()
 	
 func attack() -> void:
 	var timer = Timer.new()
@@ -70,7 +77,10 @@ func attack() -> void:
 	
 
 	
-
+func reveal_platform() -> void:
+	if Input.is_action_just_pressed("brush_unmask"):
+		#per l'animazione nel caso: play_anim("white_brush")
+		search_for_ghost_platform()
 
 
 
@@ -83,3 +93,18 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(1).timeout
 		_Hurtbox.set_deferred("disabled", false)
 		
+
+func search_for_ghost_platform():
+	print("ricerca chiamata")
+	white_brush_shape.set_deferred("disabled",false)
+	#qui metti animazione nel caso
+	await get_tree().create_timer(0.1).timeout
+	white_brush_shape.set_deferred("disabled",true)
+		
+
+
+func _on_white_brush_area_area_entered(area: Area2D) -> void:
+	print("Area individuata")
+	var platform = area.get_parent()
+	if platform.has_method("rivela_piattaforma"):
+		platform.rivela_piattaforma()

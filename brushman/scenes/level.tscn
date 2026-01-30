@@ -370,7 +370,6 @@ sources/2 = SubResource("TileSetAtlasSource_82cfe")
 
 [sub_resource type="Resource" id="Resource_8iemx"]
 script = ExtResource("8_t1rx8")
-max_health = 5.0
 base_health = 5.0
 base_damage = 1.0
 speed = 225.0
