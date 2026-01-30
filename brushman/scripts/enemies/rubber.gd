@@ -1,19 +1,18 @@
 extends CharacterBody2D
 
 @export var stats:Stats
-const SPEED = 50.0
-const JUMP_VELOCITY = -50.0
+const SPEED = 30.0
+const JUMP_VELOCITY = -30.0
 
 func _ready():
-	$Area2D.body_entered.connect(_on_body_entered)
 	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_exited)
 
 func _on_screen_exited():
 	queue_free()
 
-func _on_body_entered(body):
+func _on_area_entered(body):
 	print("body_entered rubber")
-	if body.is_class("Player") :
+	if body.get_parent().get_node("Player").stats.Faction.PLAYER:
 		queue_free()
 
 func _process(delta):
@@ -25,3 +24,8 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 	velocity.x = JUMP_VELOCITY
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.get_parent().get_node("Player").stats.Faction.PLAYER:
+		queue_free()

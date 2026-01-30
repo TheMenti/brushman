@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://bfld2j7xx0dju"]
 
 [ext_resource type="Script" uid="uid://bu7sofa8ij33c" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
+[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="2_3ycg0"]
 [ext_resource type="Texture2D" uid="uid://dgxa2oc22nmxl" path="res://sprites/scribble.png" id="2_bf1of"]
 [ext_resource type="Script" uid="uid://blt3erscs2p4f" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
+
+[sub_resource type="Resource" id="Resource_2dms2"]
+script = ExtResource("2_3ycg0")
+faction = 1
+metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxaer"]
 radius = 18.041595
@@ -10,7 +16,9 @@ radius = 18.041595
 [sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
 
 [node name="Scribble" type="CharacterBody2D" unique_id=2102717077]
+collision_layer = 2
 script = ExtResource("1_iwr0f")
+stats = SubResource("Resource_2dms2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
 scale = Vector2(0.1, 0.1)
