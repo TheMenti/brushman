@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dfhqe27h5p6a5" path="res://assets/gui/HealtBar2HP.png" id="4_5xgdr"]
 [ext_resource type="Texture2D" uid="uid://qfxh1of72px4" path="res://assets/gui/HealtBar1HP.png" id="5_oeie6"]
 [ext_resource type="Texture2D" uid="uid://dwilexm3kvn48" path="res://assets/gui/HealtBar0HP.png" id="6_x53g4"]
+[ext_resource type="Texture2D" uid="uid://b4qmeuneetwqh" path="res://assets/gui/Attacco Bianco.png" id="8_oeie6"]
+[ext_resource type="Texture2D" uid="uid://cqrf2f224ymqh" path="res://assets/gui/Attacco Nero.png" id="9_x53g4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yg0xg"]
 animations = [{
@@ -38,9 +40,19 @@ animations = [{
 script = ExtResource("1_s32md")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=535814370]
-position = Vector2(78, 33)
-scale = Vector2(2, 2)
+position = Vector2(248.62502, 115)
+scale = Vector2(7.375, 7.375)
 sprite_frames = SubResource("SpriteFrames_yg0xg")
 animation = &"health_bar"
 frame = 5
 frame_progress = 1.0
+
+[node name="AttaccoBianco" type="Sprite2D" parent="." unique_id=135390340]
+position = Vector2(1779.1725, 1016.02783)
+scale = Vector2(3.7849984, 3.8027842)
+texture = ExtResource("8_oeie6")
+
+[node name="AttaccoNero" type="Sprite2D" parent="." unique_id=1491341888]
+position = Vector2(1853.445, 1016.02783)
+scale = Vector2(3.7849984, 3.8027842)
+texture = ExtResource("9_x53g4")
