@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+@export var stats:Stats
+const SPEED = 50.0
 const JUMP_VELOCITY = -50.0
 
 func _ready():

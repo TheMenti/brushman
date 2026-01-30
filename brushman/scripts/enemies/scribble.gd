@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 60.0
 @export var damage_amount: int = 1
 @export var gravity: float = 980.0
+@export var stats:Stats
 
 # 1 represents right, -1 represents left
 var direction: int = 1 
