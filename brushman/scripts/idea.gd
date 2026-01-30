@@ -2,6 +2,8 @@ class_name Idea extends Area2D
 
 @onready var animation = $AnimatedSprite2D
 @onready var collision = $CollisionShape2D
+@onready var idea_sound = $AudioIdee
+
 var touched = false
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +21,7 @@ func _on_destroy():
 	queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
+	idea_sound.play()
 	print("LOG - [picked idea]")
 	touched = true
 	get_tree().call_group("UI", "update_ideas_counter")

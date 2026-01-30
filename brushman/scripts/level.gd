@@ -14,3 +14,4 @@ func _input(event):
 		if(player_status):
 			return
 		pause_menu_hud.toggle_pause()
+		

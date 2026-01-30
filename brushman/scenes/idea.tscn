@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://qhrdu8ruogtj" path="res://sprites/Animazione esplosione idea/Sprite-0009.png" id="31_2fmf8"]
 [ext_resource type="Texture2D" uid="uid://d2am1r7q1uyge" path="res://sprites/Animazione esplosione idea/Sprite-0010.png" id="32_aecj6"]
 [ext_resource type="Texture2D" uid="uid://v5jao4co8aye" path="res://sprites/Animazione esplosione idea/Sprite-0011.png" id="33_e70b2"]
+[ext_resource type="AudioStream" uid="uid://cvprnoqt0p6gt" path="res://assets/audio/Raccolta idee.mp3" id="34_ycufq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rti7w"]
 
@@ -157,5 +158,9 @@ shape = SubResource("CircleShape2D_rti7w")
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_e70b2")
 frame_progress = 0.5903486
+
+[node name="AudioIdee" type="AudioStreamPlayer" parent="." unique_id=1409594329]
+stream = ExtResource("34_ycufq")
+volume_db = -5.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
