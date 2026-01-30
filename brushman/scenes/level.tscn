@@ -725,10 +725,6 @@ position = Vector2(6609, 1064)
 [node name="StaticBody2D10" parent="." unique_id=615712341 instance=ExtResource("12_8iemx")]
 position = Vector2(6019, 523)
 
-[node name="KillZone3" parent="." unique_id=626647731 instance=ExtResource("15_arp2o")]
-position = Vector2(3536, 1368.0001)
-scale = Vector2(1.1199805, 1.1199805)
-
 [node name="Tree6" type="Sprite2D" parent="." unique_id=108925250]
 z_index = -1
 position = Vector2(1772.9998, 366)
@@ -764,27 +760,6 @@ z_index = -1
 position = Vector2(4057, 769)
 scale = Vector2(2.06, 2.06)
 texture = ExtResource("19_gunhw")
-
-[node name="KillZone9" parent="." unique_id=1391063865 instance=ExtResource("15_arp2o")]
-position = Vector2(5457, 1364)
-scale = Vector2(0.76, 1)
-
-[node name="KillZone10" parent="." unique_id=1235936336 instance=ExtResource("15_arp2o")]
-position = Vector2(6130, 1316)
-
-[node name="KillZone" parent="." unique_id=817075214 instance=ExtResource("15_arp2o")]
-position = Vector2(145, 389)
-scale = Vector2(0.1929122, 1.3664165)
-
-[node name="KillZone2" parent="." unique_id=2004668445 instance=ExtResource("15_arp2o")]
-position = Vector2(460, 518)
-
-[node name="KillZone4" parent="." unique_id=1109494440 instance=ExtResource("15_arp2o")]
-position = Vector2(1772, 869)
-
-[node name="KillZone5" parent="." unique_id=1520115315 instance=ExtResource("15_arp2o")]
-position = Vector2(4696, 1150)
-scale = Vector2(0.1948659, 1.324677)
 
 [node name="Rubber" parent="." unique_id=2102717077 instance=ExtResource("17_82cfe")]
 position = Vector2(854, 248)
