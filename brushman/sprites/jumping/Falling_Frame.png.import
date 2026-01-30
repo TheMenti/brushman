@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uerb01nfks67"
-path="res://.godot/imported/4.png-4cfb0439141885779446c7d1aacef910.ctex"
+uid="uid://dn0vm6n6wb6ww"
+path="res://.godot/imported/Falling_Frame.png-fbba4c9fc58c75e9ec9bf7ea390fc2a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jumping/4.png"
-dest_files=["res://.godot/imported/4.png-4cfb0439141885779446c7d1aacef910.ctex"]
+source_file="res://sprites/jumping/Falling_Frame.png"
+dest_files=["res://.godot/imported/Falling_Frame.png-fbba4c9fc58c75e9ec9bf7ea390fc2a6.ctex"]
 
 [params]
 

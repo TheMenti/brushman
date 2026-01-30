@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5ye2d6ea8ic0"
-path="res://.godot/imported/6.png-4e011ce2c2460975f4be2d1ece97ed95.ctex"
+uid="uid://tb37plkskds0"
+path="res://.godot/imported/Static.png-7df67c2c5d7fafb7fcfc640a216458c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/jumping/6.png"
-dest_files=["res://.godot/imported/6.png-4e011ce2c2460975f4be2d1ece97ed95.ctex"]
+source_file="res://scenes/Static.png"
+dest_files=["res://.godot/imported/Static.png-7df67c2c5d7fafb7fcfc640a216458c3.ctex"]
 
 [params]
 
