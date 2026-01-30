@@ -1171,12 +1171,6 @@ position = Vector2(46, 220)
 [node name="Path2D" type="Path2D" parent="." unique_id=1387392583]
 curve = SubResource("Curve2D_gunhw")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1733069594]
-position = Vector2(755, 248)
-rotation = 0.010869138
-rotates = false
-script = ExtResource("19_8gofh")
-
 [node name="Rubber" parent="Path2D/PathFollow2D" unique_id=2102717077 instance=ExtResource("17_82cfe")]
 rotation = -0.014284742
 scale = Vector2(0.11394866, 0.09089326)
