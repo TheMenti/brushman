@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sejdtvobnlid"
-path="res://.godot/imported/QuitButtonsPressed.png-81c0a3285ed4752329b29ed663b4db44.ctex"
+uid="uid://28qc3erm6hor"
+path="res://.godot/imported/ResumeButtonPressed.png-da0c5116de5dab4c9fba5053ad748b78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/QuitButtonsPressed.png"
-dest_files=["res://.godot/imported/QuitButtonsPressed.png-81c0a3285ed4752329b29ed663b4db44.ctex"]
+source_file="res://assets/gui/ResumeButtonPressed.png"
+dest_files=["res://.godot/imported/ResumeButtonPressed.png-da0c5116de5dab4c9fba5053ad748b78.ctex"]
 
 [params]
 

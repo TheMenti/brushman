@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://crsra1k6db20t" path="res://scripts/menu.gd" id="1_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://ctyemi435w1b4" path="res://assets/gui/PlayButtons.png" id="1_mhnvy"]
-[ext_resource type="Texture2D" uid="uid://bvhu6aorhn8wf" path="res://assets/gui/PlayButtonsPressed.png" id="2_4ytvr"]
 [ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="2_g3eks"]
 [ext_resource type="Texture2D" uid="uid://bwdclkr7o23j3" path="res://assets/gui/photoshop hud.png" id="2_v86rl"]
 [ext_resource type="Texture2D" uid="uid://ubvao0ftau06" path="res://assets/gui/QuitButtons.png" id="3_g3eks"]
-[ext_resource type="Texture2D" uid="uid://sejdtvobnlid" path="res://assets/gui/QuitButtonsPressed.png" id="4_v86rl"]
+[ext_resource type="Texture2D" uid="uid://cx2njkf3rpysw" path="res://assets/gui/PlayButtonPressed.png" id="5_v86rl"]
+[ext_resource type="Texture2D" uid="uid://14tkh0uiqecm" path="res://assets/gui/QuitButtonPressed.png" id="7_v86rl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_474hf"]
 texture = ExtResource("2_v86rl")
@@ -62,7 +62,7 @@ alignment = 1
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
 texture_normal = ExtResource("1_mhnvy")
-texture_pressed = ExtResource("2_4ytvr")
+texture_pressed = ExtResource("5_v86rl")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -70,7 +70,7 @@ stretch_mode = 0
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
 texture_normal = ExtResource("3_g3eks")
-texture_pressed = ExtResource("4_v86rl")
+texture_pressed = ExtResource("7_v86rl")
 ignore_texture_size = true
 stretch_mode = 0
 

@@ -120,7 +120,7 @@ sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
-position = Vector2(-0.4131031, 3.39888)
+position = Vector2(1.2665987e-07, 4.3808784)
 shape = SubResource("CapsuleShape2D_3v2ag")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1678830769]
@@ -128,7 +128,7 @@ position = Vector2(-9, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=814652836]
-position = Vector2(17.671875, 3.25)
+position = Vector2(16.788229, 5.540228)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
@@ -138,7 +138,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1377391845]
-position = Vector2(-2.413103, 4.39888)
+position = Vector2(-1.9999999, 5.3808784)
 shape = SubResource("CapsuleShape2D_jej6c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=467078960]
@@ -149,7 +149,7 @@ zoom = Vector2(3.5, 3.5)
 [node name="WhiteBrushArea" type="Area2D" parent="." unique_id=1153323243]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WhiteBrushArea" unique_id=2139435707]
-position = Vector2(31.663322, 2.4557242)
+position = Vector2(30.779676, 4.7459526)
 scale = Vector2(0.5188388, -1.4220254)
 shape = SubResource("RectangleShape2D_3v2ag")
 disabled = true
