@@ -462,10 +462,22 @@ base_damage = 1.0
 speed = 150.0
 metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
-[sub_resource type="Resource" id="Resource_gunhw"]
+[sub_resource type="Resource" id="Resource_8gofh"]
+script = null
+base_damage = 1.0
+faction = 1
 metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
-[sub_resource type="Resource" id="Resource_8gofh"]
+[sub_resource type="Curve2D" id="Curve2D_gunhw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 755, 248, 0, 0, 0, 0, 847, 249, 0, 0, 0, 0, 847, 249, 0, 0, 0, 0, 755, 248)
+}
+point_count = 4
+
+[sub_resource type="Resource" id="Resource_gunhw"]
+script = null
+base_damage = 1.0
+faction = 1
 metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [node name="Level" type="Node2D" unique_id=493140446]
@@ -745,11 +757,6 @@ z_index = -1
 position = Vector2(4057, 769)
 scale = Vector2(2.06, 2.06)
 texture = ExtResource("19_gunhw")
-
-[node name="Rubber" parent="." unique_id=2102717077 instance=ExtResource("17_82cfe")]
-position = Vector2(854, 248)
-scale = Vector2(0.11394864, 0.090893246)
-stats = SubResource("Resource_gunhw")
 
 [node name="Scribble" parent="." unique_id=471414367 instance=ExtResource("18_gunhw")]
 position = Vector2(748, 312)
@@ -1161,3 +1168,16 @@ position = Vector2(6923, 539)
 
 [node name="idea82" parent="." unique_id=213776927 instance=ExtResource("25_3ies3")]
 position = Vector2(46, 220)
+[node name="Path2D" type="Path2D" parent="." unique_id=1387392583]
+curve = SubResource("Curve2D_gunhw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1733069594]
+position = Vector2(755, 248)
+rotation = 0.010869138
+rotates = false
+script = ExtResource("19_8gofh")
+
+[node name="Rubber" parent="Path2D/PathFollow2D" unique_id=2102717077 instance=ExtResource("17_82cfe")]
+rotation = -0.014284742
+scale = Vector2(0.11394866, 0.09089326)
+stats = SubResource("Resource_gunhw")

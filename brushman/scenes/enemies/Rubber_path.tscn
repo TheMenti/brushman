@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dwrrllhfdvlmg"]
+
+[sub_resource type="Curve2D" id="Curve2D_thu8j"]
+
+[node name="RubberPath" type="Path2D" unique_id=1008192432]
+curve = SubResource("Curve2D_thu8j")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1624096840]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=327662791]
