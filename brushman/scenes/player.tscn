@@ -77,15 +77,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3v2ag"]
-radius = 11.0
-height = 72.0
+radius = 3.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(40.625, 76)
+size = Vector2(8.65625, 14.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jej6c"]
-radius = 13.0
-height = 66.0
+radius = 2.0
+height = 14.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2ag"]
 size = Vector2(932, 81)
@@ -98,20 +98,21 @@ script = ExtResource("1_d2wvv")
 stats = SubResource("Resource_jej6c")
 
 [node name="player_animated_sprites" type="AnimatedSprite2D" parent="." unique_id=695863480]
-position = Vector2(3, 12)
-scale = Vector2(0.03617961, 0.029981371)
+position = Vector2(0.5868988, 4.39888)
+scale = Vector2(0.007897958, 0.007034237)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1732113809]
-position = Vector2(-2, 11)
+position = Vector2(-0.4131031, 3.39888)
 shape = SubResource("CapsuleShape2D_3v2ag")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1678830769]
+position = Vector2(-9, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=814652836]
-position = Vector2(21.6875, 10)
+position = Vector2(17.671875, 3.25)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
@@ -121,7 +122,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1377391845]
-position = Vector2(-4, 12)
+position = Vector2(-2.413103, 4.39888)
 shape = SubResource("CapsuleShape2D_jej6c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=467078960]

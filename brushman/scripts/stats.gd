@@ -12,7 +12,7 @@ signal death
 @export var faction:Faction = Faction.PLAYER
 @export var speed:float
 
-var current_health: float: set = _on_health_set
+var current_health:float
 
 func _init() -> void:
 	initialize_stats.call_deferred()
@@ -20,12 +20,13 @@ func _init() -> void:
 func initialize_stats():
 	current_health = base_health
 	
-func take_damage(amount: int):
+func take_damage(amount: float):
 	current_health -= amount
-	
-
-func _on_health_set(value: float):
-	current_health = value
+	print(current_health)
 	if current_health <= 0:
 		death.emit()
-	health_changed.emit(current_health, base_health)
+	
+	
+func _on_death():
+	pass #TODO Leo qua gestisci la morte del player, Gino tu la morte dei nemici/boss
+	
