@@ -13,10 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://mabpispcvbc2" path="res://scenes/ghost_platform.tscn" id="5_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://yik3i6di5u77" path="res://scenes/health_bar.tscn" id="6_2r41h"]
 [ext_resource type="PackedScene" uid="uid://ch4krp3hin6h7" path="res://scenes/death_screen.tscn" id="8_b121j"]
-[ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="8_t1rx8"]
 [ext_resource type="Texture2D" uid="uid://6qrhj3xhlflb" path="res://assets/gui/Lavagna.png" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://5e03uqfb7w4m" path="res://scenes/ghost_platform2.tscn" id="12_8iemx"]
-[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://wb_kill_zone.tscn" id="16_arp2o"]
+[ext_resource type="PackedScene" uid="uid://dlwexqucjql6p" path="res://scenes/wb_kill_zone.tscn" id="16_arp2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpun6"]
 texture = ExtResource("3_olg7q")
@@ -368,13 +367,6 @@ sources/0 = SubResource("TileSetAtlasSource_8iemx")
 sources/1 = SubResource("TileSetAtlasSource_64w2a")
 sources/2 = SubResource("TileSetAtlasSource_82cfe")
 
-[sub_resource type="Resource" id="Resource_8iemx"]
-script = ExtResource("8_t1rx8")
-base_health = 5.0
-base_damage = 1.0
-speed = 225.0
-metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
-
 [node name="Level" type="Node2D" unique_id=493140446]
 process_mode = 3
 position = Vector2(527, 246)
@@ -543,11 +535,6 @@ text = "LEFT MOUSE BUTTON - to attack"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player" parent="." unique_id=893161433 instance=ExtResource("4_mx8sn")]
-process_mode = 1
-position = Vector2(32, 216)
-stats = SubResource("Resource_8iemx")
-
 [node name="StaticBody2D" parent="." unique_id=1061743008 instance=ExtResource("5_ppgk2")]
 position = Vector2(1016, 261)
 
@@ -599,3 +586,7 @@ position = Vector2(4607, 1366)
 
 [node name="KillZone7" parent="." unique_id=1522794032 instance=ExtResource("16_arp2o")]
 position = Vector2(6091, 1318)
+
+[node name="Player" parent="." unique_id=893161433 instance=ExtResource("4_mx8sn")]
+position = Vector2(358, 196)
+scale = Vector2(2.5911329, 2.5911329)

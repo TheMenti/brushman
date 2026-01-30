@@ -10,8 +10,8 @@ func _ready() -> void:
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		#var player_status = player.return_player_status() 
-		
-		#if(player_status):
-			#return
+		var player_status = player.return_player_status() 
+
+		if(player_status):
+			return
 		pause_menu_hud.toggle_pause()
