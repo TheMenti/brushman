@@ -4,15 +4,20 @@ enum Faction{
 	PLAYER,
 	ENEMY,
 }
+
 signal health_changed(new_health: int, max_health: int)
 signal death
+signal new_health(amount: float)
 
+#TODO mettere segnale per danno per modificare HUD
+
+@export var max_health: float
 @export var base_health:float 
 @export var base_damage:float
 @export var faction:Faction = Faction.PLAYER
 @export var speed:float
 
-var current_health: float: set = _on_health_set
+var current_health:float
 
 func _init() -> void:
 	initialize_stats.call_deferred()
@@ -20,12 +25,13 @@ func _init() -> void:
 func initialize_stats():
 	current_health = base_health
 	
-func take_damage(amount: int):
+func take_damage(amount: float):
 	current_health -= amount
-	
-
-func _on_health_set(value: float):
-	current_health = value
+	print(current_health)
 	if current_health <= 0:
+		current_health = max_health
 		death.emit()
-	health_changed.emit(current_health, base_health)
+	else:
+		new_health.emit(current_health)
+	
+	

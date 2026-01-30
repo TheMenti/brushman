@@ -4,9 +4,23 @@ class_name player extends CharacterBody2D
 @onready var SPEED := stats.speed
 @onready var _Hitbox = $Hitbox/CollisionShape2D
 @onready var _Hurtbox = $Hurtbox/CollisionShape2D
+
+@onready var white_brush_area = $WhiteBrushArea
+@onready var white_brush_shape = $WhiteBrushArea/CollisionShape2D
+
 const JUMP_VELOCITY = -300.0
 var facing := 1 # 1 destra, -1 sinistra
 
+var is_dead = false
+
+func _ready():
+	if stats:
+		stats.death.connect(_on_death)
+		stats.new_health.connect(_on_new_health)
+
+
+func return_player_status():
+	return is_dead
 
 func play_anim(name: String) -> void:
 	if _animated_sprite.animation != name:
@@ -19,7 +33,9 @@ func _physics_process(delta: float) -> void:
 	
 	# Salto
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$JumpSound.play()
 		velocity.y = JUMP_VELOCITY
+		await get_tree().create_timer(0.1).timeout #leggero ritardo per suono
 		play_anim("jumping")
 	
 	elif Input.is_action_pressed("jump") and not is_on_floor():
@@ -35,13 +51,11 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		if direction < 0:
-			_animated_sprite.flip_h = true
-			facing = -1
-			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+			#_animated_sprite.flip_h = true
+			$".".scale.x =  scale.y * -1
 		else:
-			_animated_sprite.flip_h = false
-			facing = 1
-			_Hitbox.position.x = abs(_Hitbox.position.x) * facing
+			#_animated_sprite.flip_h = false
+			$".".scale.x =  scale.y * 1
 			
 		if is_on_floor():
 			play_anim("walking")
@@ -59,20 +73,16 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 	attack()
+	reveal_platform()
 	
 func attack() -> void:
 	var timer = Timer.new()
 	if Input.is_action_just_pressed("brush_attack"):
+		play_anim("attack")
 		_Hitbox.set_deferred("disabled", false)
 		await get_tree().create_timer(0.5).timeout
 		_Hitbox.set_deferred("disabled", true)
-		
-	
-
-	
-
-
-
+			
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
@@ -83,3 +93,40 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(1).timeout
 		_Hurtbox.set_deferred("disabled", false)
 		
+
+func reveal_platform() -> void:
+	if Input.is_action_just_pressed("brush_unmask"):
+		#per l'animazione nel caso: play_anim("white_brush")
+		search_for_ghost_platform()
+
+
+func search_for_ghost_platform():
+	print("ricerca chiamata")
+	white_brush_shape.set_deferred("disabled",false)
+	#qui metti animazione nel caso
+	await get_tree().create_timer(0.1).timeout
+	white_brush_shape.set_deferred("disabled",true)
+		
+
+func _on_white_brush_area_area_entered(area: Area2D) -> void:
+	print("Area individuata")
+	var platform = area.get_parent()
+	if platform.has_method("rivela_piattaforma"):
+		platform.rivela_piattaforma()
+
+func _on_death():
+	is_dead = true
+	var hud = get_parent().get_node("health_bar") #modifico il frame della salute
+	hud.update_sprite(0) #frame con teschio
+	
+	var death_hud = get_parent().get_node("death_screen")
+	death_hud.showDeathScreen()
+	
+
+func _on_new_health(amount: float):
+	var hud = get_parent().get_node("health_bar") 
+	if hud:
+		hud.update_sprite(int(amount))
+
+	
+	
