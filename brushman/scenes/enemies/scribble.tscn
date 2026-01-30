@@ -3,15 +3,19 @@
 [ext_resource type="Script" uid="uid://bu7sofa8ij33c" path="res://scripts/enemies/scribble.gd" id="1_iwr0f"]
 [ext_resource type="Script" uid="uid://dqe1o8gtmhpc5" path="res://scripts/stats.gd" id="2_3ycg0"]
 [ext_resource type="Texture2D" uid="uid://dgxa2oc22nmxl" path="res://sprites/scribble.png" id="2_bf1of"]
-[ext_resource type="Script" uid="uid://blt3erscs2p4f" path="res://scripts/enemies/enemy_hutbox.gd" id="3_b75ow"]
 
 [sub_resource type="Resource" id="Resource_2dms2"]
 script = ExtResource("2_3ycg0")
+base_health = 1.0
+base_damage = 1.0
 faction = 1
+speed = 30.0
 metadata/_custom_type_script = "uid://dqe1o8gtmhpc5"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kxaer"]
 radius = 18.041595
+
+[sub_resource type="GDScript" id="GDScript_bf1of"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bf1of"]
 
@@ -36,10 +40,12 @@ shape = SubResource("CircleShape2D_kxaer")
 [node name="Area2D" type="Area2D" parent="." unique_id=655088420]
 scale = Vector2(9.040001, 8.360001)
 collision_layer = 2
-script = ExtResource("3_b75ow")
+script = SubResource("GDScript_bf1of")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433931226]
 scale = Vector2(1.2, 1.201)
 shape = SubResource("CircleShape2D_bf1of")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=281969470]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
