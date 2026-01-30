@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyxjvr67bpwr7"
-path="res://.godot/imported/ResumeButtonsPressed.png-85a2adb19d5c511b40ca881a8f0d1a70.ctex"
+uid="uid://cx2njkf3rpysw"
+path="res://.godot/imported/PlayButtonPressed.png-8d46f826c6f634c76bbc5640524b4b26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gui/ResumeButtonsPressed.png"
-dest_files=["res://.godot/imported/ResumeButtonsPressed.png-85a2adb19d5c511b40ca881a8f0d1a70.ctex"]
+source_file="res://assets/gui/PlayButtonPressed.png"
+dest_files=["res://.godot/imported/PlayButtonPressed.png-8d46f826c6f634c76bbc5640524b4b26.ctex"]
 
 [params]
 

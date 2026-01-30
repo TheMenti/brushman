@@ -16,11 +16,17 @@ script = ExtResource("1_wfw3d")
 
 [node name="Control" type="Control" parent="." unique_id=967307418]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 335.0
-offset_top = 179.0
-offset_right = 806.0
-offset_bottom = 410.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.5
+offset_top = -115.5
+offset_right = 235.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 

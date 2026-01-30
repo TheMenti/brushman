@@ -8,7 +8,7 @@ class_name player extends CharacterBody2D
 @onready var white_brush_area = $WhiteBrushArea
 @onready var white_brush_shape = $WhiteBrushArea/CollisionShape2D
 
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -250.0
 var facing := 1 # 1 destra, -1 sinistra
 
 var is_dead = false
