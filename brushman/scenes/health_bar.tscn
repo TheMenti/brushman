@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://qfxh1of72px4" path="res://assets/gui/HealtBar1HP.png" id="5_oeie6"]
 [ext_resource type="Texture2D" uid="uid://dwilexm3kvn48" path="res://assets/gui/HealtBar0HP.png" id="6_x53g4"]
 [ext_resource type="Texture2D" uid="uid://btxrojaipgpy0" path="res://sprites/Animazione idea idle/Sprite-0001.png" id="8_5xgdr"]
+[ext_resource type="Texture2D" uid="uid://b4qmeuneetwqh" path="res://assets/gui/Attacco Bianco.png" id="9_yg0xg"]
+[ext_resource type="Texture2D" uid="uid://cqrf2f224ymqh" path="res://assets/gui/Attacco Nero.png" id="10_oo1ju"]
+[ext_resource type="FontFile" uid="uid://c3u22sjiv2aq1" path="res://assets/Fonts/tiny5.regular.ttf" id="11_1kt7d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yg0xg"]
 animations = [{
@@ -52,11 +55,38 @@ scale = Vector2(7.799999, 7.799999)
 texture = ExtResource("8_5xgdr")
 
 [node name="Label" type="Label" parent="." unique_id=55413342 groups=["UI"]]
-offset_left = 60.927174
-offset_top = 133.80002
-offset_right = 100.92717
-offset_bottom = 156.80002
+offset_left = 141.0
+offset_top = 133.00002
+offset_right = 181.0
+offset_bottom = 156.00002
 scale = Vector2(6.1047373, 5.35361)
 text = "0"
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AttaccoBianco" type="Sprite2D" parent="." unique_id=436231456]
+position = Vector2(1826, 1005)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("9_yg0xg")
+
+[node name="AttaccoNero" type="Sprite2D" parent="." unique_id=2112631175]
+position = Vector2(1738, 1006)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("10_oo1ju")
+
+[node name="Sx" type="Label" parent="." unique_id=218483839]
+offset_left = 1698.0
+offset_top = 936.0
+offset_right = 1773.0
+offset_bottom = 961.0
+theme_override_fonts/font = ExtResource("11_1kt7d")
+theme_override_font_sizes/font_size = 24
+text = "Mouse 1"
+
+[node name="Dx" type="Label" parent="." unique_id=784933711]
+offset_left = 1788.0
+offset_top = 936.0
+offset_right = 1863.0
+offset_bottom = 961.0
+theme_override_fonts/font = ExtResource("11_1kt7d")
+theme_override_font_sizes/font_size = 24
+text = "Mouse 2"

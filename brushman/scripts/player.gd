@@ -100,6 +100,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		stats.take_damage(damage_amount)
 		_animated_sprite.modulate = Color(1.1, 0.0, 0.0, 1.0)
 		_Hurtbox.set_deferred("disabled", true)
+		hit_sound.play()
 		await get_tree().create_timer(1).timeout
 		_animated_sprite.modulate = Color(1.1, 1.1, 1.1, 1.0)
 		_Hurtbox.set_deferred("disabled", false)
