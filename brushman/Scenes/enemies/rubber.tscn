@@ -9,8 +9,8 @@
 
 [node name="Rubber" type="CharacterBody2D" unique_id=2102717077]
 scale = Vector2(0.325, 0.325)
-collision_layer = 7
-collision_mask = 7
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("2_bvcmf")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=647494072]
@@ -23,7 +23,7 @@ scale = Vector2(9.040001, 8.360001)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=433931226]
-scale = Vector2(1.2, 1.201)
+scale = Vector2(1.2272294, 1.2282519)
 shape = SubResource("CircleShape2D_bf1of")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1227972828]
@@ -31,3 +31,5 @@ shape = SubResource("CircleShape2D_bf1of")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270958617]
 scale = Vector2(9.492305, 9.492305)
 shape = SubResource("CircleShape2D_opkmn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
