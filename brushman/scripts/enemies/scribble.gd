@@ -14,10 +14,6 @@ var direction: int = 1
 
 func _ready() -> void:
 	ledge_check.position.x = 4  # Offset to look ahead (adjust based on sprite size)
-	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_exited)
-
-func _on_screen_exited():
-	queue_free()
 
 func _physics_process(delta: float) -> void:
 	# Apply Gravity
